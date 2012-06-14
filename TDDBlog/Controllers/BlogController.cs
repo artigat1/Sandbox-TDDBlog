@@ -15,7 +15,6 @@ namespace TDDBlog.Controllers
         public BlogController(IBlogRepository iBlogRepository)
         {
             _blogRepository = iBlogRepository;
-            int val = "string"
         }
 
         /// <summary>
