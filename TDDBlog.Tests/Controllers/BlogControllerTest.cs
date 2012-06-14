@@ -69,6 +69,8 @@ namespace TDDBlog.Tests.Controllers
             Assert.AreEqual(content2, blogEntry2.Content);
             const string url2 = "Im-still-in-to-this";
             Assert.AreNotEqual(url2, blogEntry2.Url);
+            const string url2A = "im-still-in-to-this";
+            Assert.AreEqual(url2A, blogEntry2.Url);
 
             var blogEntry3 = blogEntries[2];
             Assert.AreEqual(id3, blogEntry3.Id);
