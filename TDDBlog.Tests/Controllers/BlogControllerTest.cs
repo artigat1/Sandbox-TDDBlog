@@ -78,6 +78,7 @@ namespace TDDBlog.Tests.Controllers
             Assert.AreEqual(content3, blogEntry3.Content);
             const string url3 = "ok";
             Assert.AreEqual(url3, blogEntry3.Url);
+            Assert.AreNotEqual(title3, blogEntry3.Url);
         }
     }
 }
