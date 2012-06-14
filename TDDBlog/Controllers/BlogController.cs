@@ -8,11 +8,20 @@ namespace TDDBlog.Controllers
     {
         private readonly IBlogRepository _blogRepository;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BlogController"/> class.
+        /// </summary>
+        /// <param name="iBlogRepository">The i blog repository.</param>
         public BlogController(IBlogRepository iBlogRepository)
         {
             _blogRepository = iBlogRepository;
+            int val = "string"
         }
 
+        /// <summary>
+        /// Indexes this instance.
+        /// </summary>
+        /// <returns></returns>
         public ViewResult Index()
         {
             var blogEntries = _blogRepository.GetAllBlogEntries();
