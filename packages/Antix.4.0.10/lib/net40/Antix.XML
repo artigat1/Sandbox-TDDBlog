@@ -1,0 +1,1746 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Antix</name>
+    </assembly>
+    <members>
+        <member name="T:Antix.Security.Crypto">
+            <summary>
+              RSA Encryption rountines
+            </summary>
+        </member>
+        <member name="M:Antix.Security.Crypto.#ctor(System.String)">
+            <summary>
+              <para>Create using passed key</para>
+              <para>Pass public key for encrypt only</para>
+              <para>Encryption and decryption requires private key</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Security.Crypto.#ctor">
+            <summary>
+              <para>Create using keys stored in config</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Security.Crypto.Hash(System.String,System.Boolean)">
+            <summary>
+              <para>Get a hash value for the string passed</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Security.Crypto.GetRandomHash">
+            <summary>
+              <para>Gets a random hash string based on a GUID</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Security.Crypto.Encrypt(System.String)">
+            <summary>
+              Encrypt a string using RSA encryption.
+            </summary>
+            <param name = "value">String to encrypt</param>
+            <returns>Encrypted Value</returns>
+        </member>
+        <member name="M:Antix.Security.Crypto.Decrypt(System.String,System.Boolean)">
+            <summary>
+              Decrypt a string encrypted using RSA encryption
+            </summary>
+            <param name = "value">Encrypted string</param>
+            <param name = "ignoreBadData">Suppresses exception thrown on encountering Bad Data</param>
+            <returns></returns>
+        </member>
+        <member name="T:Antix.Html.SimpleElement">
+            <summary>
+              <para>SimpleElement class</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Html.ValueElement">
+            <summary>
+              Node object
+              Value only, used for text and base classes for other elements
+            </summary>
+        </member>
+        <member name="M:Antix.Html.ValueElement.#ctor(Antix.Html.Document,System.String)">
+            <summary>
+              Create an element with the document and value
+            </summary>
+            <param name = "document">document</param>
+            <param name = "value">value</param>
+        </member>
+        <member name="M:Antix.Html.ValueElement.#ctor(System.String)">
+            <summary>
+              Create an element with a string value
+            </summary>
+            <param name = "value">value</param>
+        </member>
+        <member name="F:Antix.Html.ValueElement._Document">
+            <summary>
+              Document
+            </summary>
+        </member>
+        <member name="F:Antix.Html.ValueElement._Parent">
+            <summary>
+              Parent
+            </summary>
+        </member>
+        <member name="F:Antix.Html.ValueElement._Value">
+            <summary>
+              Value
+            </summary>
+        </member>
+        <member name="M:Antix.Html.ValueElement.GetHtml">
+            <summary>
+              Get Html for this tag
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Antix.Html.ValueElement.GetHtmlContent">
+            <summary>
+              Get Html Content for this tag
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Antix.Html.ValueElement.GetHtml(System.Text.StringBuilder)">
+            <summary>
+              Get Html for this node
+            </summary>
+        </member>
+        <member name="M:Antix.Html.ValueElement.ToString">
+            <summary>
+              String
+            </summary>
+        </member>
+        <member name="P:Antix.Html.ValueElement.Document">
+            <summary>
+              Document
+            </summary>
+        </member>
+        <member name="P:Antix.Html.ValueElement.Parent">
+            <summary>
+              Parent
+            </summary>
+        </member>
+        <member name="P:Antix.Html.ValueElement.ParentElement">
+            <summary>
+              Parent Element
+            </summary>
+        </member>
+        <member name="P:Antix.Html.ValueElement.ParentElements">
+            <summary>
+              Parent Element
+            </summary>
+        </member>
+        <member name="P:Antix.Html.ValueElement.Value">
+            <summary>
+              Value
+            </summary>
+        </member>
+        <member name="M:Antix.Html.SimpleElement.#ctor(System.String,System.String)">
+            <summary>
+              Create a DataElement
+            </summary>
+        </member>
+        <member name="M:Antix.Html.SimpleElement.#ctor(System.String,System.String,Antix.Html.AttributeCollection)">
+            <summary>
+              Create a DataElement
+            </summary>
+        </member>
+        <member name="F:Antix.Html.SimpleElement._name">
+            <summary>
+              Name
+            </summary>
+        </member>
+        <member name="F:Antix.Html.SimpleElement._Attributes">
+            <summary>
+              Tag Attributes
+            </summary>
+        </member>
+        <member name="M:Antix.Html.SimpleElement.HasClass(System.String)">
+            <summary>
+              Check the class propery for the named class
+            </summary>
+        </member>
+        <member name="M:Antix.Html.SimpleElement.Get(System.String)">
+            <summary>
+              Find elements by a path
+            </summary>
+            <param name = "path">path</param>
+            <returns>Matching nodes</returns>
+        </member>
+        <member name="M:Antix.Html.SimpleElement.GetFirst(System.String)">
+            <summary>
+              Find elements by a path
+            </summary>
+            <param name = "path">class path</param>
+            <returns>Matching nodes</returns>
+        </member>
+        <member name="M:Antix.Html.SimpleElement.GetHtml(System.String,System.Int32,System.Boolean)">
+            <summary>
+              Get the value of the element given a path
+            </summary>
+        </member>
+        <member name="M:Antix.Html.SimpleElement.GetHtml(System.String)">
+            <summary>
+              Get the value of the element given a path
+            </summary>
+        </member>
+        <member name="M:Antix.Html.SimpleElement.GetAttributeValue(System.String,System.String)">
+            <summary>
+              Get the value of the element given a path
+            </summary>
+        </member>
+        <member name="M:Antix.Html.SimpleElement.GetHtml(System.Text.StringBuilder)">
+            <summary>
+              Get Html for this node
+            </summary>
+        </member>
+        <member name="M:Antix.Html.SimpleElement.ToString">
+            <summary>
+              String
+            </summary>
+        </member>
+        <member name="P:Antix.Html.SimpleElement.Name">
+            <summary>
+              Name
+            </summary>
+        </member>
+        <member name="P:Antix.Html.SimpleElement.Id">
+            <summary>
+              <para>Get the id attribute value</para>
+              <para>Returns null if not attribute exists</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Html.SimpleElement.HasAttributes">
+            <summary>
+              This Data Element has attributes
+            </summary>
+        </member>
+        <member name="P:Antix.Html.SimpleElement.Attributes">
+            <summary>
+              Tag Attributes
+            </summary>
+        </member>
+        <member name="P:Antix.Html.SimpleElement.Class">
+            <summary>
+              Css classes
+            </summary>
+        </member>
+        <member name="P:Antix.Html.SimpleElement.HasValue">
+            <summary>
+              This Element has a value
+            </summary>
+        </member>
+        <member name="T:Antix.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Antix.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Antix.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Antix.Properties.Resources.LogWriteFailure">
+            <summary>
+              Looks up a localized string similar to Failed to write to event log.
+            </summary>
+        </member>
+        <member name="P:Antix.Properties.Resources.OperationStatus_Total_NotLessThanZero">
+            <summary>
+              Looks up a localized string similar to Total must be greater or equal to 0.
+            </summary>
+        </member>
+        <member name="T:Antix.OperationStatus">
+            <summary>
+              <para>Opertation status information</para>
+            </summary>
+        </member>
+        <member name="M:Antix.OperationStatus.#ctor(System.EventHandler{Antix.OperationStatus.EventArgs})">
+            <summary>
+              <para>Create status object</para>
+            </summary>
+        </member>
+        <member name="M:Antix.OperationStatus.#ctor">
+            <summary>
+              <para>Create status object</para>
+            </summary>
+        </member>
+        <member name="M:Antix.OperationStatus.BeginOperation(System.String,System.Int32)">
+            <summary>
+              <para>Begin a new operation</para>
+            </summary>
+            <param name="text">Text</param>
+            <param name="total">Total for progress</param>
+        </member>
+        <member name="M:Antix.OperationStatus.Cancel">
+            <summary>
+              <para>Cancel the operation</para>
+            </summary>
+        </member>
+        <member name="M:Antix.OperationStatus.IncrementProgress(System.String)">
+            <summary>
+              <para>Increment the progress display some text</para>
+            </summary>
+            <param name="text">Text</param>
+        </member>
+        <member name="M:Antix.OperationStatus.CompleteOperation(System.String)">
+            <summary>
+              <para>Complete the current operation</para>
+            </summary>
+            <param name="text">Text</param>
+        </member>
+        <member name="M:Antix.OperationStatus.SetStatus(System.String,System.Nullable{System.Int32})">
+            <summary>
+              <para>Set the status on the current operation</para>
+            </summary>
+            <param name="text">Text</param>
+            <param name="progress">ProgressPercentage</param>
+        </member>
+        <member name="P:Antix.OperationStatus.IsCancelled">
+            <summary>
+              <para>Cancelled</para>
+            </summary>
+        </member>
+        <member name="P:Antix.OperationStatus.IsComplete">
+            <summary>
+              <para>Complete</para>
+            </summary>
+        </member>
+        <member name="P:Antix.OperationStatus.Text">
+            <summary>
+              <para>Current Text</para>
+            </summary>
+        </member>
+        <member name="P:Antix.OperationStatus.ProgressPercentage">
+            <summary>
+              <para>Current Progress as a percentage</para>
+            </summary>
+        </member>
+        <member name="E:Antix.OperationStatus.Change">
+            <summary>
+              <para>Raised on status change</para>
+            </summary>
+        </member>
+        <member name="T:Antix.OperationStatus.EventArgs">
+            <summary>
+              <para>Status Event</para>
+            </summary>
+        </member>
+        <member name="P:Antix.OperationStatus.EventArgs.Text">
+            <summary>
+            <para>Current opertation text</para>
+            </summary>
+        </member>
+        <member name="P:Antix.OperationStatus.EventArgs.ProgressPercentage">
+            <summary>
+            <para>Current opertation progress percentage</para>
+            </summary>
+        </member>
+        <member name="P:Antix.OperationStatus.EventArgs.IsCancelled">
+            <summary>
+            <para>Operation cancelled</para>
+            </summary>
+        </member>
+        <member name="P:Antix.OperationStatus.EventArgs.IsComplete">
+            <summary>
+            <para>Operation complete</para>
+            </summary>
+        </member>
+        <member name="T:Antix.OperationStatus.Operation">
+            <summary>
+              <para>Operation class</para>
+            </summary>
+        </member>
+        <member name="M:Antix.OperationStatus.Operation.Dispose">
+            <summary>
+              <para>Dispose and complete</para>
+            </summary>
+        </member>
+        <member name="P:Antix.OperationStatus.Operation.Text">
+            <summary>
+            <para>Operation Text</para>
+            </summary>
+        </member>
+        <member name="P:Antix.OperationStatus.Operation.Progress">
+            <summary>
+            <para>Operaion Progress</para>
+            </summary>
+        </member>
+        <member name="P:Antix.OperationStatus.Operation.Total">
+            <summary>
+            <para>Operaion Total</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Html.Selector">
+            <summary>
+              <para>A selector</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Collections.Extensions.ToHierarchy``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``0,System.Boolean},System.Action{``0,System.Collections.Generic.IEnumerable{``0}},``0)">
+            <summary>
+            <para>Build a hierarchy from the flat list</para>
+            </summary>
+            <param name="items">list</param>
+            <param name="isParent">check first is the parent of the second</param>
+            <param name="setChildren">set the children</param>
+            <param name="parent">parent object, start of the tree</param>
+            <typeparam name="T">Type</typeparam>
+            <returns>A heirarchy</returns>
+        </member>
+        <member name="T:Antix.FindDelimiters">
+            <summary>
+              <para>Strings that can wrap another string, 
+                    for example a quote</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Collections.PigeonHoleCollection`2">
+            <summary>
+              <para>Stores values by key, creates a new pigeon hole where none exists</para>
+            </summary>
+            <typeparam path = "TKey">Type of Key</typeparam>
+            <typeparam path = "TValue">Type of Value</typeparam>
+        </member>
+        <member name="P:Antix.Collections.PigeonHoleCollection`2.Item(`0)">
+            <summary>
+              <para>Get/Set items in the collection</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Html.Element">
+            <summary>
+              <para>Tag Node</para> <para>Name, attributes and child nodes</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Html.Element.#ctor(System.String)">
+            <summary>
+              Create an element with a tag name
+            </summary>
+            <param name="name"> Tag name </param>
+        </member>
+        <member name="M:Antix.Html.Element.#ctor(System.String,Antix.Html.AttributeCollection)">
+            <summary>
+              Create an element with a tag name
+            </summary>
+            <param name="name"> Tag name </param>
+            <param name="attributes"> Attributes </param>
+        </member>
+        <member name="M:Antix.Html.Element.GetHtmlContent(System.Text.StringBuilder)">
+            <summary>
+              Get the value from the child nodes
+            </summary>
+        </member>
+        <member name="M:Antix.Html.Element.Parse(System.String)">
+            <summary>
+              Parse the html passed to an element
+            </summary>
+            <param name="html"> Html </param>
+        </member>
+        <member name="M:Antix.Html.Element.Parse(System.String,Antix.Html.Element)">
+            <summary>
+              Parse the html passed
+            </summary>
+            <param name="html"> Html </param>
+            <param name="rootElement"> Root </param>
+        </member>
+        <member name="F:Antix.Html.Element.TagsNonContainers">
+            <summary>
+              Not container nodes
+            </summary>
+        </member>
+        <member name="F:Antix.Html.Element.TagsSelfClosing">
+            <summary>
+              Self Closing
+            </summary>
+        </member>
+        <member name="F:Antix.Html.Element.TagsDeclaration">
+            <summary>
+              Declaration nodes, do not need closing
+            </summary>
+        </member>
+        <member name="F:Antix.Html.Element.TagsNoCloser">
+            <summary>
+              Tags that do not close
+            </summary>
+        </member>
+        <member name="M:Antix.Html.Element.IsContainer(System.String)">
+            <summary>
+              Returns true unless the found in the _TagsNonContainers array
+            </summary>
+        </member>
+        <member name="M:Antix.Html.Element.HasNoCloser(System.String)">
+            <summary>
+              Tags that do not close
+            </summary>
+        </member>
+        <member name="M:Antix.Html.Element.IsSelfClosing(System.String)">
+            <summary>
+              Returns true if the found in the _TagsSelfClosing array
+            </summary>
+        </member>
+        <member name="M:Antix.Html.Element.IsDeclaration(System.String)">
+            <summary>
+              Returns true if the found in the _TagsDeclaration array
+            </summary>
+        </member>
+        <member name="F:Antix.Html.Element.Tags">
+            <summary>
+              tags
+            </summary>
+        </member>
+        <member name="F:Antix.Html.Element.TagsCanOnlyContain">
+            <summary>
+              tags that can only contain other tags
+            </summary>
+        </member>
+        <member name="F:Antix.Html.Element.TagsCannotContain">
+            <summary>
+              tags that cannot contain other tags directly eg li cannot contain other li tags
+            </summary>
+        </member>
+        <member name="M:Antix.Html.Element.CanContain(System.String,System.String)">
+            <summary>
+              Returns true unless the parent cannot contain the child
+            </summary>
+        </member>
+        <member name="M:Antix.Html.Element.RemoveWhiteSpace(System.String)">
+            <summary>
+              Trim and Remove WhiteSpace from a string
+            </summary>
+        </member>
+        <member name="P:Antix.Html.Element.Document">
+            <summary>
+              Document
+            </summary>
+        </member>
+        <member name="P:Antix.Html.Element.Children">
+            <summary>
+              Child nodes
+            </summary>
+        </member>
+        <member name="P:Antix.Html.Element.HasChildren">
+            <summary>
+              This Element has child nodes
+            </summary>
+        </member>
+        <member name="P:Antix.Html.Element.HasValue">
+            <summary>
+              This Element has a value
+            </summary>
+        </member>
+        <member name="T:Antix.Html.AttributeCollection">
+            <summary>
+              Collection of attributes
+            </summary>
+        </member>
+        <member name="M:Antix.Html.AttributeCollection.#ctor(Antix.Html.SimpleElement)">
+            <summary>
+              Create an attribute collection
+            </summary>
+            <param name = "parent">Parent Element</param>
+        </member>
+        <member name="F:Antix.Html.AttributeCollection.Items">
+            <summary>
+              Items
+            </summary>
+        </member>
+        <member name="M:Antix.Html.AttributeCollection.Add(Antix.Html.Attribute)">
+            <summary>
+              Add existing
+            </summary>
+            <param name = "item">item</param>
+            <returns>index added at</returns>
+        </member>
+        <member name="M:Antix.Html.AttributeCollection.Add(System.String)">
+            <summary>
+              Add new
+            </summary>
+            <param name = "name">Name</param>
+            <returns>New item</returns>
+        </member>
+        <member name="M:Antix.Html.AttributeCollection.Remove(Antix.Html.Attribute)">
+            <summary>
+              <para>Remove item</para>
+            </summary>
+            <param name = "item">item</param>
+        </member>
+        <member name="M:Antix.Html.AttributeCollection.Remove(System.String)">
+            <summary>
+              <para>Remove by name</para>
+            </summary>
+            <param name = "name">Name</param>
+        </member>
+        <member name="M:Antix.Html.AttributeCollection.Clear">
+            <summary>
+              Clear all items from the collection
+            </summary>
+        </member>
+        <member name="M:Antix.Html.AttributeCollection.GetValue(System.String)">
+            <summary>
+              <para>Get the value of the named attribute</para>
+              <para>If none is found null is returned</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Html.AttributeCollection.SetValue(System.String,System.String)">
+            <summary>
+              <para>Set the value of the named attribute</para>
+              <para>If none is found create a new one and set the value</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Html.AttributeCollection.GetHtml(System.Text.StringBuilder)">
+            <summary>
+              Get the html from the child nodes
+            </summary>
+        </member>
+        <member name="M:Antix.Html.AttributeCollection.ToString">
+            <summary>
+              String representation
+            </summary>
+        </member>
+        <member name="M:Antix.Html.AttributeCollection.GetEnumerator">
+            <summary>
+              <para>Get the collection enumerator</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Html.AttributeCollection.Parent">
+            <summary>
+              Parent element
+            </summary>
+        </member>
+        <member name="P:Antix.Html.AttributeCollection.Item(System.String)">
+            <summary>
+              Get attributes by name
+            </summary>
+        </member>
+        <member name="P:Antix.Html.AttributeCollection.Count">
+            <summary>
+              Number of items
+            </summary>
+        </member>
+        <member name="T:Antix.Html.CData">
+            <summary>
+              <para>CData class</para>
+              <para>Same as a text node but renders with cdata containers</para>
+              <para>i.e. &gt;![CDATA[ ]]&lt;</para>
+            </summary>
+        </member>
+        <member name="F:Antix.Html.CData.OpenTag">
+            <summary>
+              <para>Open tag</para>
+            </summary>
+        </member>
+        <member name="F:Antix.Html.CData.CloseTag">
+            <summary>
+              <para>Close tag</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Html.CData.#ctor(System.String)">
+            <summary>
+              Create a CData
+            </summary>
+        </member>
+        <member name="M:Antix.Html.CData.GetHtml(System.Text.StringBuilder)">
+            <summary>
+              Get Html for this node
+            </summary>
+        </member>
+        <member name="M:Antix.Html.CData.ToString">
+            <summary>
+              String
+            </summary>
+        </member>
+        <member name="T:Antix.Collections.ReaderWriterCache`2">
+            <summary>
+            <para>Cache for reading and writing over threads</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Collections.ReaderWriterCache`2.#ctor">
+            <summary>
+            <para>Create object</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Collections.ReaderWriterCache`2.#ctor(System.Collections.Generic.IEqualityComparer{`0})">
+            <summary>
+            <para>Create object</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Collections.ReaderWriterCache`2.Contains(`0)">
+            <summary>
+            <para>Check for a key</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Collections.ReaderWriterCache`2.Get(`0)">
+            <summary>
+            <para>Get existing</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Collections.ReaderWriterCache`2.Get(`0,System.Func{`1})">
+            <summary>
+            <para>Get or add existing</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Collections.ReaderWriterCache`2.Remove(`0)">
+            <summary>
+            <para>Remove item by key</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Collections.ReaderWriterCache`2.Remove(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            <para>Remove items by key</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Collections.ReaderWriterCache`2.Keys">
+            <summary>
+            <para>Gets all the keys</para>
+            </summary>
+        </member>
+        <member name="T:Antix.TypeExtensions">
+            <summary>
+              <para>Type extensions</para>
+            </summary>
+        </member>
+        <member name="M:Antix.TypeExtensions.Implements``1(System.Type,System.Boolean)">
+            <summary>
+              <para>Check a type implements another type</para>
+            </summary>
+        </member>
+        <member name="M:Antix.TypeExtensions.Implements(System.Type,System.Type,System.Boolean)">
+            <summary>
+              <para>Check a type implements another type</para>
+            </summary>
+        </member>
+        <member name="M:Antix.TypeExtensions.GetImplementation``1(System.Type,System.Boolean)">
+            <summary>
+            <para>Get the implementation of a type</para>
+            </summary>
+        </member>
+        <member name="M:Antix.TypeExtensions.GetImplementation(System.Type,System.Type,System.Boolean)">
+            <summary>
+            <para>Get the implementation of a type</para>
+            </summary>
+        </member>
+        <member name="M:Antix.TypeExtensions.DepthTo``1(System.Type)">
+            <summary>
+              <para>Get the Depth of the hierarch between two types</para>
+            </summary>
+        </member>
+        <member name="M:Antix.TypeExtensions.DepthTo(System.Type,System.Type)">
+            <summary>
+              <para>Get the Depth of the hierarch between two types</para>
+            </summary>
+        </member>
+        <member name="M:Antix.TypeExtensions.AllowsNull(System.Type)">
+            <summary>
+            <para>Value can be set to null</para>
+            </summary>
+        </member>
+        <member name="M:Antix.TypeExtensions.IsNullable(System.Type)">
+            <summary>
+              Check a provider for nullable
+            </summary>
+        </member>
+        <member name="M:Antix.TypeExtensions.GetNotNullableType(System.Type)">
+            <summary>
+              Gets the provider even if a nullable provider
+            </summary>
+        </member>
+        <member name="M:Antix.TypeExtensions.GetDefault(System.Type)">
+            <summary>
+              <para>Get the default value of the type passed</para>
+            </summary>
+            <param path = "type">A Type</param>
+            <returns>Default value</returns>
+        </member>
+        <member name="M:Antix.TypeExtensions.GetCustomAttributes``1(System.Reflection.ICustomAttributeProvider,System.Boolean)">
+            <summary>
+              <para>Return custom attributes for a provider</para>
+            </summary>
+            <typeparam path = "TAttribute">Type of attribute to return</typeparam>
+            <param path = "provider">Type to check for attributes on</param>
+            <param path = "inherit">Get inherited attributes</param>
+            <returns>An array of attributes</returns>
+        </member>
+        <member name="M:Antix.TypeExtensions.GetCustomAttributes``1(System.Reflection.ICustomAttributeProvider)">
+            <summary>
+              <para>Return custom attributes for a provider</para>
+            </summary>
+            <typeparam path = "TAttribute">Type of attribute to return</typeparam>
+            <param path = "provider">Type to check for attributes on</param>
+            <returns>An array of attributes</returns>
+        </member>
+        <member name="M:Antix.TypeExtensions.GetCustomAttribute``1(System.Reflection.ICustomAttributeProvider,System.Boolean)">
+            <summary>
+              <para>Return first custom attribute for a provider</para>
+            </summary>
+            <typeparam path = "TAttribute">Type of attribute to return</typeparam>
+            <param path = "provider">Type to check for attributes on</param>
+            <param path = "inherit">Get inherited attributes</param>
+            <returns>An attribute</returns>
+        </member>
+        <member name="M:Antix.TypeExtensions.GetCustomAttribute``1(System.Reflection.ICustomAttributeProvider)">
+            <summary>
+              <para>Return first custom attribute for a provider</para>
+              <para>Gets inherited attributes too</para>
+            </summary>
+            <typeparam path = "TAttribute">Type of attribute to return</typeparam>
+            <param path = "provider">Type to check for attributes on</param>
+            <returns>An attribute</returns>
+        </member>
+        <member name="M:Antix.TypeExtensions.FindField(System.Type,System.String,System.Reflection.BindingFlags)">
+            <summary>
+              <para>Find a field</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Security.SecurityStringExtensions.Hash(System.String)">
+            <summary>
+              <para>Hash the text passed</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Security.SecurityStringExtensions.Hash(System.String,System.Boolean)">
+            <summary>
+              <para>Hash the text passed</para>
+            </summary>
+        </member>
+        <member name="T:Antix.IOExtensions">
+            <summary>
+            <para>IO extensions</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Html.ValueElementCollection">
+            <summary>
+              Collection of elements
+            </summary>
+        </member>
+        <member name="M:Antix.Html.ValueElementCollection.#ctor(Antix.Html.Element)">
+            <summary>
+              Create an element collection
+            </summary>
+            <param name = "parent">Parent Node</param>
+        </member>
+        <member name="F:Antix.Html.ValueElementCollection._Document">
+            <summary>
+              Document
+            </summary>
+        </member>
+        <member name="F:Antix.Html.ValueElementCollection._Parent">
+            <summary>
+              Parent element
+            </summary>
+        </member>
+        <member name="F:Antix.Html.ValueElementCollection._Items">
+            <summary>
+              Items
+            </summary>
+        </member>
+        <member name="M:Antix.Html.ValueElementCollection.Next(Antix.Html.ValueElement)">
+            <summary>
+            <para>Gets the next element</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Html.ValueElementCollection.Previous(Antix.Html.ValueElement)">
+            <summary>
+            <para>Gets the previous element</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Html.ValueElementCollection.Siblings(Antix.Html.ValueElement)">
+            <summary>
+            <para>Get the siblings</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Html.ValueElementCollection.Add(Antix.Html.ValueElement)">
+            <summary>
+              Add existing
+            </summary>
+            <param name = "item">item</param>
+            <returns>index added at</returns>
+        </member>
+        <member name="M:Antix.Html.ValueElementCollection.Clear">
+            <summary>
+              Clear all items from the collection
+            </summary>
+        </member>
+        <member name="M:Antix.Html.ValueElementCollection.GetEnumerator">
+            <summary>
+              <para>Get the collection enumerator</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Html.ValueElementCollection.Document">
+            <summary>
+              Document
+            </summary>
+        </member>
+        <member name="P:Antix.Html.ValueElementCollection.Parent">
+            <summary>
+              Parent element
+            </summary>
+        </member>
+        <member name="P:Antix.Html.ValueElementCollection.Count">
+            <summary>
+              Number of items
+            </summary>
+        </member>
+        <member name="T:Antix.Validators">
+            <summary>
+              <para>Validator Regexs</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Collections.MostRecentlyUsedList.Add(System.String)">
+            <summary>
+              <para>Add item to the top of the list</para>
+              <para>If already in the collection it is removed first, effecting a move to the top of the list</para>
+            </summary>
+            <param path = "item">Item to add</param>
+        </member>
+        <member name="M:Antix.Collections.MostRecentlyUsedList.Contains(System.String)">
+            <summary>
+              <para>Check item is in the list</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Collections.MostRecentlyUsedList.CopyTo(System.String[],System.Int32)">
+            <summary>
+              <para>Copy to an array</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Collections.MostRecentlyUsedList.Remove(System.String)">
+            <summary>
+              <para>Remove an item from the list</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Collections.MostRecentlyUsedList.GetEnumerator">
+            <summary>
+              <para>Enumerator</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Collections.MostRecentlyUsedList.Item(System.Int32)">
+            <summary>
+              <para>Indexer</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Collections.MostRecentlyUsedList.IsReadOnly">
+            <summary>
+              <para>Collection is read only</para>
+            </summary>
+        </member>
+        <member name="T:Antix.DrawingExtensions">
+            <summary>
+              <para>Drawing extensions</para>
+            </summary>
+        </member>
+        <member name="M:Antix.DrawingExtensions.Resize(System.Drawing.Image,System.Int32,System.Int32)">
+            <summary>
+              <para>Resize an image to the given dimensions</para>
+            </summary>
+        </member>
+        <member name="M:Antix.DrawingExtensions.Resize(System.Drawing.Image,System.Drawing.Size)">
+            <summary>
+              <para>Resize an image to the given dimensions</para>
+            </summary>
+        </member>
+        <member name="M:Antix.DrawingExtensions.Restrict(System.Drawing.Size,System.Drawing.Size)">
+            <summary>
+              <para>Restrict a size to the maximum</para>
+            </summary>
+            <param name="original"> Original Size </param>
+            <param name="max"> Maximum Size </param>
+            <returns> Restricted Size </returns>
+        </member>
+        <member name="T:Antix.Html.TagContent">
+            <summary>
+              <para>Definition of a tag as content</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Html.Tag">
+            <summary>
+              <para>A definition of a Tag element</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Html.Tag.Name">
+            <summary>
+              <para>Tag Name</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Html.Tag.Contains">
+            <summary>
+              <para>Required Contents</para>
+            </summary>
+        </member>
+        <member name="T:Antix.EnumerableExtensions">
+            <summary>
+              <para>Enumerable Extensions</para>
+            </summary>
+        </member>
+        <member name="M:Antix.EnumerableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+            <summary>
+              <para>Iterate the enuerable</para>
+            </summary>
+        </member>
+        <member name="M:Antix.EnumerableExtensions.Random``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+              <para>Return a random element from the source</para>
+            </summary>
+            <typeparam name = "T">Element Type</typeparam>
+            <param name = "source">Source</param>
+            <returns>Element</returns>
+        </member>
+        <member name="M:Antix.EnumerableExtensions.Random``1(System.Collections.Generic.IEnumerable{``0},System.Int32,System.Int32)">
+            <summary>
+              <para>Get a random number of the passed elements in the source</para>
+            </summary>
+            <typeparam name = "T">Element Type</typeparam>
+            <param name = "source">Source</param>
+            <param name = "minCount">Min number of elements to get</param>
+            <param name = "maxCount">Max exclusive number of elements to get</param>
+            <returns>Elements</returns>
+        </member>
+        <member name="T:Antix.Xml.XhtmlResolver">
+            <summary>
+              <para>XmlResolver for XHTML</para>
+            </summary>
+        </member>
+        <member name="F:Antix.Xml.XhtmlResolver.ENTITIES_URN">
+            <summary>
+              <para>URN string to identify all the Entities</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Xml.XhtmlResolver.GetEntity(System.Uri,System.String,System.Type)">
+            <summary>
+              <para>Get Entity</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Xml.XhtmlResolver.ResolveUri(System.Uri,System.String)">
+            <summary>
+              <para>Resolves XHTML DOCTYPE</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Logger">
+            <summary>
+              <para>Logger, by default uses System.Diagnostics.Trace</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Logger.Information(System.String,System.Object[])">
+            <summary>
+            <para>Log Information</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Logger.Warning(System.String,System.Object[])">
+            <summary>
+            <para>Log a Warning</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Logger.Error(System.String,System.Object[])">
+            <summary>
+            <para>Log an Error</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Logger.Error(System.Exception)">
+            <summary>
+            <para>Log an Error</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Logger.Error(System.Exception,System.String,System.Object[])">
+            <summary>
+            <para>Log an Error</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Html.Document">
+            <summary>
+              Html Document object
+            </summary>
+        </member>
+        <member name="M:Antix.Html.Document.#ctor">
+            <summary>
+              Create a Document
+            </summary>
+        </member>
+        <member name="M:Antix.Html.Document.#ctor(System.String)">
+            <summary>
+              Create a Document from the html passed
+            </summary>
+        </member>
+        <member name="F:Antix.Html.Document._element">
+            <summary>
+              Root element
+            </summary>
+        </member>
+        <member name="M:Antix.Html.Document.LoadFile(System.String)">
+            <summary>
+              <para>Load from a file</para>
+            </summary>
+            <param name = "filePath">file and path</param>
+        </member>
+        <member name="M:Antix.Html.Document.LoadUrl(System.String)">
+            <summary>
+              <para>Load from a Url</para>
+            </summary>
+            <param name = "url">Url</param>
+        </member>
+        <member name="M:Antix.Html.Document.Get(System.String)">
+            <summary>
+              Find elements by a selector
+            </summary>
+            <param name = "selector">selector</param>
+            <returns>Matching nodes</returns>
+        </member>
+        <member name="M:Antix.Html.Document.GetFirst(System.String)">
+            <summary>
+              Find elements by a selector
+            </summary>
+            <param name = "selector">selector</param>
+            <returns>Matching nodes</returns>
+        </member>
+        <member name="M:Antix.Html.Document.FromHtml(System.String)">
+            <summary>
+              <para>Create a document from the html passed</para>
+            </summary>
+            <param name = "html">Html</param>
+            <returns>New Document</returns>
+        </member>
+        <member name="M:Antix.Html.Document.FromFile(System.String)">
+            <summary>
+              <para>Create a document from a file</para>
+            </summary>
+            <param name = "filePath">Full file path</param>
+            <returns>New Document</returns>
+        </member>
+        <member name="M:Antix.Html.Document.FromUrl(System.String)">
+            <summary>
+              <para>Create a document from a url</para>
+            </summary>
+            <param name = "url">Url</param>
+            <returns>New Document</returns>
+        </member>
+        <member name="M:Antix.Html.Document.Get(System.String,Antix.Html.SimpleElement)">
+            <summary>
+              Find elements by a class path
+            </summary>
+            <param name = "paths">path</param>
+            <param name = "element">start element</param>
+            <returns>Matching nodes</returns>
+        </member>
+        <member name="M:Antix.Html.Document.GetSelector(Antix.Html.Selector,System.Collections.Generic.IEnumerable{Antix.Html.ValueElement},System.Boolean)">
+            <summary>
+              Check all elements in itemsSearch against the selector passed
+            </summary>
+        </member>
+        <member name="P:Antix.Html.Document.Element">
+            <summary>
+              Root element
+            </summary>
+        </member>
+        <member name="P:Antix.Html.Document.UserAgent">
+            <summary>
+            <para>User Agent String</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Collections.KeyCollection`2">
+            <summary>
+              <para>Collection of items with a specified key</para>
+            </summary>
+            <typeparam name = "TKey">Type of Key</typeparam>
+            <typeparam name = "TValue">Type of Item</typeparam>
+        </member>
+        <member name="M:Antix.Collections.KeyCollection`2.#ctor(System.Func{`1,`0})">
+            <summary>
+              <para>Create the collection</para>
+            </summary>
+            <param name = "getKey">Func to get the key from a value</param>
+        </member>
+        <member name="P:Antix.Collections.KeyCollection`2.Item(`0)">
+            <summary>
+            <para>Indexer</para>
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="T:Antix.Permissions.ICreatePermission">
+            <summary>
+              <para>Create Permission Interface</para>
+            </summary>
+        </member>
+        <member name="M:Antix.GlobalizationExtensions.ToCurrencyString(System.Decimal,System.String)">
+            <summary>
+              <para>Format a decimal</para>
+            </summary>
+        </member>
+        <member name="T:Antix.LocalThread">
+            <summary>
+              <para>Per thread random number</para>
+            </summary>
+        </member>
+        <member name="P:Antix.LocalThread.Random">
+            <summary>
+              <para>Local Thread Random number generator</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Permissions.PermissionManager">
+            <summary>
+              <para>Permission Man</para>
+            </summary>
+        </member>
+        <member name="T:Antix.ObjectExtensions">
+            <summary>
+              <para>Extension for object types</para>
+            </summary>
+        </member>
+        <member name="M:Antix.ObjectExtensions.Format(System.Object,System.String,System.String)">
+            <summary>
+              <para>Format the object to a string</para>
+            </summary>
+            <param name = "value">Value</param>
+            <param name = "format">String format</param>
+            <param name = "defaultValue">Default string if value is null</param>
+            <returns>Formatted string</returns>
+        </member>
+        <member name="M:Antix.ObjectExtensions.Format(System.Object,System.String)">
+            <summary>
+              <para>Format the object to a string</para>
+              <para>If the value is null an empty string is returned</para>
+            </summary>
+            <param name = "value">Value</param>
+            <param name = "format">String format</param>
+            <returns>Formatted string</returns>
+        </member>
+        <member name="M:Antix.ObjectExtensions.Parse(System.Object,System.Object,System.Type,System.Globalization.CultureInfo)">
+            <summary>
+              <para>Parse an object to a provider</para>
+            </summary>
+        </member>
+        <member name="M:Antix.ObjectExtensions.Parse(System.Object,System.Object,System.Type)">
+            <summary>
+              <para>Parse an object to a provider</para>
+            </summary>
+        </member>
+        <member name="M:Antix.ObjectExtensions.Parse``1(System.Object,``0)">
+            <summary>
+              <para>Parse an object to a provider</para>
+            </summary>
+        </member>
+        <member name="M:Antix.ObjectExtensions.Parse``1(System.Object,``0,System.Globalization.CultureInfo)">
+            <summary>
+              <para>Parse an object to a provider</para>
+            </summary>
+        </member>
+        <member name="M:Antix.ObjectExtensions.Parse``1(System.Object)">
+            <summary>
+              <para>Parse an object to a provider</para>
+            </summary>
+        </member>
+        <member name="M:Antix.ObjectExtensions.Parse``1(System.Object,System.Globalization.CultureInfo)">
+            <summary>
+              <para>Parse an object to a provider</para>
+            </summary>
+        </member>
+        <member name="M:Antix.ReflectionExtensions.GetPath(System.Reflection.Assembly)">
+            <summary>
+              Get the path given an assembly
+            </summary>
+        </member>
+        <member name="M:Antix.ReflectionExtensions.GetResourceBytes(System.Type,System.String)">
+            <summary>
+              <para>Get resources</para>
+            </summary>
+        </member>
+        <member name="M:Antix.ReflectionExtensions.FindResourceInfo(System.Type,System.String)">
+            <summary>
+              <para>Get resources</para>
+            </summary>
+        </member>
+        <member name="M:Antix.ReflectionExtensions.FindResourceStream(System.Type,System.String)">
+            <summary>
+              <para>Get resources</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Permissions.IUpdatePermission">
+            <summary>
+              <para>Update Permission Interface</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Permissions.IDeletePermission">
+            <summary>
+              <para>Delete Permission Interface</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Html.Comment">
+            <summary>
+              <para>CommentNode class</para>
+              <para>Same as a text node but renders with comment containers</para>
+              <para>i.e. &gt;!-- --&lt;</para>
+            </summary>
+        </member>
+        <member name="F:Antix.Html.Comment.OpenTag">
+            <summary>
+              <para>Open tag</para>
+            </summary>
+        </member>
+        <member name="F:Antix.Html.Comment.CloseTag">
+            <summary>
+              <para>Close tag</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Html.Comment.#ctor(System.String)">
+            <summary>
+              Create a CommentNode
+            </summary>
+        </member>
+        <member name="M:Antix.Html.Comment.GetHtml(System.Text.StringBuilder)">
+            <summary>
+              Get Html for this node
+            </summary>
+        </member>
+        <member name="M:Antix.Html.Comment.ToString">
+            <summary>
+              String
+            </summary>
+        </member>
+        <member name="T:Antix.StringExtensions">
+            <summary>
+            <para>Extensions for string objects</para>
+            </summary>
+        </member>
+        <member name="M:Antix.StringExtensions.Camelize(System.String,System.Boolean)">
+            <summary>
+              Convert the passed type to camel format
+            
+              Capitalize the first letter of each word and remove the spaces
+            </summary>
+            <param name = "value">Value to convert to camel case</param>
+            <param name = "upper">Upper case the first letter</param>
+            <returns>Camelized type</returns>
+        </member>
+        <member name="M:Antix.StringExtensions.Camelize(System.String)">
+            <summary>
+              Convert the passed type to camel format
+            
+              Capitalize the first letter of each word and remove the spaces
+            </summary>
+            <param name = "value">Value to convert to lower camel case</param>
+            <returns>Camelized type</returns>
+        </member>
+        <member name="M:Antix.StringExtensions.Decamelize(System.String)">
+            <summary>
+            <para>Decamelize the string</para>
+            <para>Puts a space before all capitals</para>
+            </summary>
+            <param name="value">Input String</param>
+            <returns>Decamelized string</returns>
+        </member>
+        <member name="M:Antix.StringExtensions.Capitalize(System.String)">
+            <summary>
+              <para>Captialize the text passed</para>
+            </summary>
+            <param name = "value">Value to capitalize</param>
+            <returns>Capitalized text</returns>
+        </member>
+        <member name="M:Antix.StringExtensions.Head(System.String@,System.String,System.StringComparison)">
+            <summary>
+              Get the head of a string, 
+            
+              destructive, ie leaving only the body in the text variable
+            </summary>
+            <param name = "text">Text string</param>
+            <param name = "uptoItem">Head cut of point (neck)</param>
+            <param name = "comparisonType">String Comparison</param>
+            <returns>Head only</returns>
+        </member>
+        <member name="M:Antix.StringExtensions.Head(System.String@,System.String)">
+            <summary>
+              Get the head of a string, 
+            
+              destructive, ie leaving only the body in the text variable
+              case sensitive
+            </summary>
+            <param name = "text">Text string</param>
+            <param name = "uptoItem">Head cut of point (neck)</param>
+            <returns>Head only</returns>
+        </member>
+        <member name="M:Antix.StringExtensions.Head(System.String,System.String,System.StringComparison)">
+            <summary>
+              Get the head of a string
+            </summary>
+            <param name = "text">Text string</param>
+            <param name = "uptoItem">Head cut of point (neck)</param>
+            <param name = "comparisonType">String Comparison</param>
+            <returns>Head only</returns>
+        </member>
+        <member name="M:Antix.StringExtensions.Head(System.String,System.String)">
+            <summary>
+              Get the head of a string, 
+              case sensitive
+            </summary>
+            <param name = "text">Text string</param>
+            <param name = "uptoItem">Head cut of point (neck)</param>
+            <returns>Head only</returns>
+        </member>
+        <member name="M:Antix.StringExtensions.Tail(System.String@,System.String,System.StringComparison)">
+            <summary>
+              Remove the tail from text
+            
+              destructive, ie leaving only the body in the text variable
+            </summary>
+            <param name = "text">Text string</param>
+            <param name = "uptoItem">Tail cut off point</param>
+            <param name = "comparisonType">String Comparison</param>
+            <returns>Tail only</returns>
+        </member>
+        <member name="M:Antix.StringExtensions.Tail(System.String@,System.String)">
+            <summary>
+              Remove the tail from text
+            
+              destructive, ie leaving only the body in the text variable
+              case sensitive
+            </summary>
+            <param name = "text">Text string</param>
+            <param name = "uptoItem">Tail cut off point</param>
+            <returns>Tail only</returns>
+        </member>
+        <member name="M:Antix.StringExtensions.Tail(System.String,System.String,System.StringComparison)">
+            <summary>
+              Remove the tail from text
+            </summary>
+            <param name = "text">Text string</param>
+            <param name = "uptoItem">Tail cut off point</param>
+            <param name = "comparisonType">String Comparison</param>
+            <returns>Tail only</returns>
+        </member>
+        <member name="M:Antix.StringExtensions.Tail(System.String,System.String)">
+            <summary>
+              Remove the tail from text
+              case sensitive
+            </summary>
+            <param name = "text">Text string</param>
+            <param name = "uptoItem">Tail cut off point</param>
+            <returns>Tail only</returns>
+        </member>
+        <member name="M:Antix.StringExtensions.Prefix(System.String,System.String,System.String)">
+            <summary>
+              <para>Add a prefix to text with a delimiter only if the prefix is not null or empty</para>
+            </summary>
+            <param name = "text">Text to add prefix</param>
+            <param name = "value">Value to prefix</param>
+            <param name = "delimiter">Delimiter</param>
+            <returns>Prefixed text</returns>
+        </member>
+        <member name="M:Antix.StringExtensions.Suffix(System.String,System.String,System.String)">
+            <summary>
+              <para>Add a suffix to text with a delimiter only if the suffix is not null or empty</para>
+            </summary>
+            <param name = "text">Text to add suffix</param>
+            <param name = "value">Value to suffix</param>
+            <param name = "delimiter">Delimiter</param>
+            <returns>Suffixed text</returns>
+        </member>
+        <member name="M:Antix.StringExtensions.Between(System.String,System.String,System.String,System.StringComparison)">
+            <summary>
+              <para>Get the text between the 'startsWith' and 'endsWith' parameters</para>
+            </summary>
+            <param name = "text">Text</param>
+            <param name = "startsWith">Required text starts with this</param>
+            <param name = "endsWith">Required text ends with this</param>
+            <param name = "comparisonType">String Comparison</param>
+            <returns>Text between</returns>
+        </member>
+        <member name="M:Antix.StringExtensions.Between(System.String,System.String,System.String)">
+            <summary>
+              <para>Get the text between the 'startsWith' and 'endsWith' parameters</para>
+              <para>Case sensitive</para>
+            </summary>
+            <param name = "text">Text</param>
+            <param name = "startsWith">Required text starts with this</param>
+            <param name = "endsWith">Required text ends with this</param>
+            <returns>Text between</returns>
+        </member>
+        <member name="M:Antix.StringExtensions.ToSafeFileName(System.String)">
+            <summary>
+              <para>Get a safe file path from the string passed</para>
+            </summary>
+        </member>
+        <member name="M:Antix.StringExtensions.ToSafeDirectoryName(System.String)">
+            <summary>
+              <para>Get a safe url directory path from the string passed</para>
+            </summary>
+        </member>
+        <member name="M:Antix.StringExtensions.ReplaceChars(System.String,System.Char[],System.Boolean,System.String,System.Boolean)">
+            <summary>
+              <para>Get a safe file path from the string passed</para>
+            </summary>
+        </member>
+        <member name="M:Antix.StringExtensions.ReplaceChars(System.String,System.Char[],System.String,System.Boolean)">
+            <summary>
+              <para>Get a safe file path from the string passed</para>
+            </summary>
+        </member>
+        <member name="M:Antix.StringExtensions.FilePathSquish(System.String,System.Int32)">
+            <summary>
+              <para>Get a shorter display version of a file path</para>
+            </summary>
+        </member>
+        <member name="M:Antix.StringExtensions.IsNumeric(System.String)">
+            <summary>
+              <para>Text is numeric</para>
+            </summary>
+            <param name = "text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Antix.StringExtensions.UrlClean(System.String)">
+            <summary>
+              <para>Clean a string for a HttpUrl</para>
+            </summary>
+        </member>
+        <member name="M:Antix.StringExtensions.UrlEncode(System.String)">
+            <summary>
+              <para>Covert string to HttpUrl friendly</para>
+            </summary>
+        </member>
+        <member name="M:Antix.StringExtensions.HtmlEncode(System.String)">
+            <summary>
+              <para>Encode text for html</para>
+            </summary>
+        </member>
+        <member name="M:Antix.StringExtensions.HtmlDecode(System.String)">
+            <summary>
+            <para>Decode Html uses WebUtility</para>
+            </summary>
+        </member>
+        <member name="M:Antix.StringExtensions.Contains(System.String,System.String,System.StringComparison)">
+            <summary>
+              <para>Case insensitive contains</para>
+            </summary>
+            <param name = "text">Text to check</param>
+            <param name = "value">Value to check for</param>
+            <param name = "comparisonType">Comparison Type</param>
+            <returns>True if matched</returns>
+        </member>
+        <member name="M:Antix.StringExtensions.ContainsWordStartingWith(System.String,System.String,System.StringComparison)">
+            <summary>
+              <para>Case insensitive contains word</para>
+            </summary>
+            <param name = "text">Text to check</param>
+            <param name = "word">Word to check for</param>
+            <param name = "comparisonType">Comparison Type</param>
+            <returns>True if matched</returns>
+        </member>
+        <member name="M:Antix.StringExtensions.MaxLength(System.String,System.Int32)">
+            <summary>
+            <para>Truncate a string to the max length</para>
+            </summary>
+        </member>
+        <member name="M:Antix.StringExtensions.Replace(System.String,System.String,System.String,System.StringComparison)">
+            <summary>
+              <para>Case insensitive replace</para>
+            </summary>
+            <param name = "text">Incoming text string</param>
+            <param name = "oldValue">Token to be replaced</param>
+            <param name = "newValue">Replacement token</param>
+            <param name = "comparisonType">Comparison provider</param>
+            <returns>Resultant text</returns>
+        </member>
+        <member name="M:Antix.StringExtensions.IsEmail(System.String)">
+            <summary>
+              <para>Checks passed text is an email address</para>
+            </summary>
+        </member>
+        <member name="M:Antix.StringExtensions.ToEmail(System.String)">
+            <summary>
+              <para>Checks text is a valid e-mail</para>
+              <para>If not returns null</para>
+            </summary>
+        </member>
+        <member name="M:Antix.StringExtensions.IsHttpUrl(System.String)">
+            <summary>
+              <para>Checks passed text is a http url</para>
+            </summary>
+        </member>
+        <member name="M:Antix.StringExtensions.ToHttpUrl(System.String)">
+            <summary>
+              <para>Checks text is a valid url</para>
+              <para>if it is makes sure it has http prefixed</para>
+              <para>If not returns null</para>
+            </summary>
+        </member>
+        <member name="M:Antix.StringExtensions.HtmlToText(System.String)">
+            <summary>
+              Convert HTML to Text
+            </summary>
+            <param name = "html">HTML to covert</param>
+            <returns>Text only</returns>
+        </member>
+        <member name="M:Antix.StringExtensions.Find(System.String,System.Int32,Antix.FindDelimiters,System.StringComparison,System.String[])">
+            <summary>
+              <para>Find the first index of any of the passed string values</para>
+            </summary>
+            <param name = "text">Text to search</param>
+            <param name = "startIndex">Staring index</param>
+            <param name = "delimiters">Protected delimiters</param>
+            <param name = "stringComparison">String Comparison</param>
+            <param name = "values">Values to find, finds first</param>
+            <returns>FindResult, which is an implicit int for the index of the item found,  -1 = not found</returns>
+        </member>
+        <member name="M:Antix.StringExtensions.Find(System.String,System.StringComparison,System.String[])">
+            <summary>
+              <para>Find the first index of any of the passed string values</para>
+            </summary>
+            <returns>FindResult, which is an implicit int for the index of the item found,  -1 = not found</returns>
+        </member>
+        <member name="M:Antix.StringExtensions.Find(System.String,Antix.FindDelimiters,System.String[])">
+            <summary>
+              <para>Find the first index of any of the passed string values</para>
+            </summary>
+            <returns>FindResult, which is an implicit int for the index of the item found,  -1 = not found</returns>
+        </member>
+        <member name="M:Antix.StringExtensions.Find(System.String,System.Int32,System.StringComparison,System.String[])">
+            <summary>
+              <para>Find the first index of any of the passed string values</para>
+            </summary>
+            <returns>FindResult, which is an implicit int for the index of the item found,  -1 = not found</returns>
+        </member>
+        <member name="M:Antix.StringExtensions.Find(System.String,System.Int32,Antix.FindDelimiters,System.String[])">
+            <summary>
+              <para>Find the first index of any of the passed string values</para>
+            </summary>
+            <returns>FindResult, which is an implicit int for the index of the item found,  -1 = not found</returns>
+        </member>
+        <member name="M:Antix.StringExtensions.Find(System.String,System.String[])">
+            <summary>
+              <para>Find the first index of any of the passed string values</para>
+            </summary>
+            <returns>FindResult, which is an implicit int for the index of the item found,  -1 = not found</returns>
+        </member>
+        <member name="M:Antix.StringExtensions.Find(System.String,System.Int32,System.String[])">
+            <summary>
+              <para>Find the first index of any of the passed string values</para>
+            </summary>
+            <returns>FindResult, which is an implicit int for the index of the item found,  -1 = not found</returns>
+        </member>
+        <member name="M:Antix.StringExtensions.FindSplit(System.String,System.StringComparison,System.String[])">
+            <summary>
+              <para>FindSplit the first index of any of the passed string values</para>
+            </summary>
+            <returns>string[], which is an implicit int for the index of the item found,  -1 = not found</returns>
+        </member>
+        <member name="M:Antix.StringExtensions.FindSplit(System.String,Antix.FindDelimiters,System.String[])">
+            <summary>
+              <para>FindSplit the first index of any of the passed string values</para>
+            </summary>
+            <returns>string[], which is an implicit int for the index of the item found,  -1 = not found</returns>
+        </member>
+        <member name="M:Antix.StringExtensions.FindSplit(System.String,System.Int32,System.StringComparison,System.String[])">
+            <summary>
+              <para>FindSplit the first index of any of the passed string values</para>
+            </summary>
+            <returns>string[], which is an implicit int for the index of the item found,  -1 = not found</returns>
+        </member>
+        <member name="M:Antix.StringExtensions.FindSplit(System.String,System.Int32,Antix.FindDelimiters,System.String[])">
+            <summary>
+              <para>FindSplit the first index of any of the passed string values</para>
+            </summary>
+            <returns>string[], which is an implicit int for the index of the item found,  -1 = not found</returns>
+        </member>
+        <member name="M:Antix.StringExtensions.FindSplit(System.String,System.String[])">
+            <summary>
+              <para>FindSplit the first index of any of the passed string values</para>
+            </summary>
+            <returns>string[], which is an implicit int for the index of the item found,  -1 = not found</returns>
+        </member>
+        <member name="M:Antix.StringExtensions.FindSplit(System.String,System.Int32,System.String[])">
+            <summary>
+              <para>FindSplit the first index of any of the passed string values</para>
+            </summary>
+            <returns>string[], which is an implicit int for the index of the item found,  -1 = not found</returns>
+        </member>
+        <member name="T:Antix.FindResult">
+            <summary>
+              <para>Result of a call to find</para>
+              <para>Implicit convertion to int, 
+                    if null (not found) will return -1</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Permissions.IPermission">
+            <summary>
+              <para>Root (Read) Permission Interface</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Html.Attribute">
+            <summary>
+              <para>Attribute class</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Html.Attribute.#ctor(System.String)">
+            <summary>
+              Create an Attribute with a tag name
+            </summary>
+            <param name = "name">Tag name</param>
+        </member>
+        <member name="F:Antix.Html.Attribute._Parent">
+            <summary>
+              Parent
+            </summary>
+        </member>
+        <member name="F:Antix.Html.Attribute._Name">
+            <summary>
+              Node Name
+            </summary>
+        </member>
+        <member name="F:Antix.Html.Attribute._Value">
+            <summary>
+              Value
+            </summary>
+        </member>
+        <member name="M:Antix.Html.Attribute.op_Explicit(Antix.Html.Attribute)~System.String">
+            <summary>
+              <para>Allow value to be retrieved by casting to a string</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Html.Attribute.Parent">
+            <summary>
+              Parent
+            </summary>
+        </member>
+        <member name="P:Antix.Html.Attribute.ParentElement">
+            <summary>
+              Parent Element
+            </summary>
+        </member>
+        <member name="P:Antix.Html.Attribute.Name">
+            <summary>
+              Node Name
+            </summary>
+        </member>
+        <member name="P:Antix.Html.Attribute.Value">
+            <summary>
+              <para>Value</para>
+              <para>setting this value will add double quotes to the raw value</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Html.Attribute.ValueRaw">
+            <summary>
+              <para>Value raw, this is what is output by GetHtml()</para>
+              <para>Setting the valueRaw will set the value trimming quotes</para>
+            </summary>
+        </member>
+        <member name="T:Antix.DateExtensions">
+            <summary>
+            <para>Date Extensions</para>
+            </summary>
+        </member>
+        <member name="M:Antix.DateExtensions.StartOfWeek(System.DateTime,System.DayOfWeek)">
+            <summary>
+              <para>Gets the start of the week</para>
+            </summary>
+        </member>
+        <member name="M:Antix.DateExtensions.StartOfWeek(System.DateTime)">
+            <summary>
+              <para>Gets the start of the week</para>
+            </summary>
+        </member>
+        <member name="M:Antix.DateExtensions.Name(System.DayOfWeek)">
+            <summary>
+              <para>Get the day of the week in the current culture</para>
+            </summary>
+        </member>
+        <member name="M:Antix.DateExtensions.NameAbbreviated(System.DayOfWeek)">
+            <summary>
+              <para>Get the abreviated day of the week in the current culture</para>
+            </summary>
+        </member>
+    </members>
+</doc>

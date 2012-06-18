@@ -23,7 +23,7 @@ namespace TDDBlog.Tests.Data
         /// <summary>
         /// Builds this instance.
         /// </summary>
-        /// <returns>Mocked <see cref="BlogEntry"/> object</returns>
+        /// <returns>Mocked <see cref="IBlogEntry"/> object</returns>
         public BlogEntry Build()
         {
             _mock.SetupGet(b => b.Id).Returns(_id);

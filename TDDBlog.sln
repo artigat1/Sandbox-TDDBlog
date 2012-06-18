@@ -3,22 +3,45 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDDBlog", "TDDBlog\TDDBlog.csproj", "{115C1F78-0EBC-44C6-B1A8-51D7776612B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDDBlog.Tests", "TDDBlog.Tests\TDDBlog.Tests.csproj", "{4CEA3AF1-82AE-4B16-ADF6-09C0FDDC141A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDDBlog.Data", "TDDBlog.Data\TDDBlog.Data.csproj", "{C1D7B5E1-0033-4DC5-B03F-A6C7A14EB2BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDDBlog.Tests", "TDDBlog.Tests\TDDBlog.Tests.csproj", "{5556F1FB-E107-4479-931A-FBFD54CA7427}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E933147B-437D-4E0D-9BCB-E1AB76756B7F}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		TDDBlog.vsmdi = TDDBlog.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
 EndProject
 Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = TDDBlog.vsmdi
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		AppHarbor|Any CPU = AppHarbor|Any CPU
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{115C1F78-0EBC-44C6-B1A8-51D7776612B5}.AppHarbor|Any CPU.ActiveCfg = AppHarbor|Any CPU
+		{115C1F78-0EBC-44C6-B1A8-51D7776612B5}.AppHarbor|Any CPU.Build.0 = AppHarbor|Any CPU
 		{115C1F78-0EBC-44C6-B1A8-51D7776612B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{115C1F78-0EBC-44C6-B1A8-51D7776612B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{115C1F78-0EBC-44C6-B1A8-51D7776612B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{115C1F78-0EBC-44C6-B1A8-51D7776612B5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4CEA3AF1-82AE-4B16-ADF6-09C0FDDC141A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4CEA3AF1-82AE-4B16-ADF6-09C0FDDC141A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4CEA3AF1-82AE-4B16-ADF6-09C0FDDC141A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4CEA3AF1-82AE-4B16-ADF6-09C0FDDC141A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1D7B5E1-0033-4DC5-B03F-A6C7A14EB2BE}.AppHarbor|Any CPU.ActiveCfg = Release|Any CPU
+		{C1D7B5E1-0033-4DC5-B03F-A6C7A14EB2BE}.AppHarbor|Any CPU.Build.0 = Release|Any CPU
+		{C1D7B5E1-0033-4DC5-B03F-A6C7A14EB2BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1D7B5E1-0033-4DC5-B03F-A6C7A14EB2BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1D7B5E1-0033-4DC5-B03F-A6C7A14EB2BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1D7B5E1-0033-4DC5-B03F-A6C7A14EB2BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5556F1FB-E107-4479-931A-FBFD54CA7427}.AppHarbor|Any CPU.ActiveCfg = Release|Any CPU
+		{5556F1FB-E107-4479-931A-FBFD54CA7427}.AppHarbor|Any CPU.Build.0 = Release|Any CPU
+		{5556F1FB-E107-4479-931A-FBFD54CA7427}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5556F1FB-E107-4479-931A-FBFD54CA7427}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5556F1FB-E107-4479-931A-FBFD54CA7427}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5556F1FB-E107-4479-931A-FBFD54CA7427}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

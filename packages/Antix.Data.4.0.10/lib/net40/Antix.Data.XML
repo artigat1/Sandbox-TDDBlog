@@ -1,0 +1,2452 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Antix.Data</name>
+    </assembly>
+    <members>
+        <member name="T:Antix.Data.Management.DatabaseUser">
+            <summary>
+              Database User
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseObjectBase.#ctor(Antix.Data.Management.DatabaseServer)">
+            <summary>
+              Create a scriptable class
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseObjectBase.ScriptDrop(System.Text.StringBuilder)">
+            <summary>
+              Script this database object drop
+            </summary>
+            <param name = "sql">StringBuilder</param>
+            <returns>Script created</returns>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseObjectBase.ScriptUpsert(System.Text.StringBuilder)">
+            <summary>
+              Script this database object update/insert
+            </summary>
+            <param name = "sql">StringBuilder</param>
+            <returns>Script created</returns>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseObjectBase.Script(System.Text.StringBuilder)">
+            <summary>
+              Script this database object
+            </summary>
+            <param name = "sql">StringBuilder</param>
+            <returns>Script created</returns>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseObject.#ctor(System.String,Antix.Data.Management.DatabaseServer)">
+            <summary>
+              Create an existing database object class
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseObject.ToString">
+            <summary>
+              <para>String representation of the object</para>
+            </summary>
+            <returns>The key value</returns>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseObject.Script">
+            <summary>
+              <para>Script all items in the collection</para>
+            </summary>
+            <returns>Sql script</returns>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseObject.Save(System.Data.SqlClient.SqlConnection)">
+            <summary>
+              Save changed to the database object
+            </summary>
+            <param name = "conn">Connection</param>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseObject.IsNew">
+            <summary>
+              Object is new
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseObject.IsEdited">
+            <summary>
+              Object has changed
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseObject.IsDeleted">
+            <summary>
+              Object is deleted
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseObject.Key">
+            <summary>
+              Get a key for this object
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseObject.Name">
+            <summary>
+              Name of the object
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseObject.NameOriginal">
+            <summary>
+              Original name of the object
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseObject.NameIsEdited">
+            <summary>
+              Name has been changed
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseUser.#ctor(Antix.Data.Management.Database)">
+            <summary>
+              Create a new User with defaults
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseUser.#ctor(System.String,Antix.Data.Management.Database)">
+            <summary>
+              Create an existing User object
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseUser.Script(System.Text.StringBuilder)">
+            <summary>
+              Generate script for this User
+            </summary>
+            <param name = "sql">Sql</param>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseUser.Key">
+            <summary>
+              Key for this object
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseUser.Database">
+            <summary>
+              Database
+            </summary>
+        </member>
+        <member name="T:LinqKit.Linq">
+            <summary>
+            Another good idea by Tomas Petricek.
+            See http://tomasp.net/blog/dynamic-linq-queries.aspx for information on how it's used.
+            </summary>
+        </member>
+        <member name="T:LinqKit.ExpandableQuery`1">
+            <summary>
+            An IQueryable wrapper that allows us to visit the query's expression tree just before LINQ to SQL gets to it.
+            This is based on the excellent work of Tomas Petricek: http://tomasp.net/blog/linq-expand.aspx
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Entity.Interface.Site.IPageTagData">
+            <summary>
+              <para>A page tag</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Entity.INamed">
+            <summary>
+              <para>An object with a name</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Site.IPageTagData.ParentId">
+            <summary>
+              <para>Parent Id</para>
+            </summary>
+            [Key]
+            [Column(Order = 0)]
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Site.IPageTagData.Parent">
+            <summary>
+              <para>Parent Page</para>
+            </summary>
+            [ForeignKey("ParentId")]
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Site.IPageTagData.Name">
+            <summary>
+              <para>Tag Name</para>
+            </summary>
+            [Key]
+            [Column(Order = 1)]
+            [MaxLength(20)]
+        </member>
+        <member name="T:Antix.Data.Entity.Interface.IBinaryData">
+            <summary>
+              <para>Binary Data</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Entity.Interface.IData">
+            <summary>
+              <para>Interface for a data object</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Data.IId">
+            <summary>
+              <para>An object identifiable by an int32 id</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.IId.Id">
+            <summary>
+            <para>Id</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.IData.Id">
+            <summary>
+              <para>Id primary key</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.IBinaryData.MimeType">
+            <summary>
+            <para>Mime Type</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.IBinaryData.Bytes">
+            <summary>
+            <para>Bytes</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.IBinaryData.Size">
+            <summary>
+            <para>Size</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Entity.Extensions">
+            <summary>
+              <para>Extension Methods</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.Create``1(Antix.Data.Entity.Interface.IDataContext)">
+            <summary>
+              <para>Create an object</para> <para>Adds it too</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.GetFor``1(Antix.Data.Entity.Interface.IDataContext,System.Linq.Expressions.Expression{System.Func{``0}})">
+            <summary>
+              <para>Gets the object from the property or creates one where null</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.Add``1(Antix.Data.Entity.Interface.IDataContext,``0)">
+            <summary>
+              <para>Add an object</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.Add``1(Antix.Data.Entity.Interface.IDataContext,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+              <para>Add objects</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.Add``1(Antix.Data.Entity.Interface.IDataContext,``0[])">
+            <summary>
+              <para>Add objects</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.Delete``1(Antix.Data.Entity.Interface.IDataContext,``0)">
+            <summary>
+              <para>Delete an object</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.Delete``1(Antix.Data.Entity.Interface.IDataContext,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+              <para>Delete objects</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.Delete``1(Antix.Data.Entity.Interface.IDataContext,``0[])">
+            <summary>
+              <para>Delete objects</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.ToXml(Antix.Data.Entity.Interface.IData)">
+            <summary>
+              <para>Export to xml</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.FromXml``1(System.Byte[])">
+            <summary>
+              <para>Convert to object from xml</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.FromXml``1(System.IO.Stream)">
+            <summary>
+              <para>Create data object from xml</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.Import``1(Antix.Data.Entity.Interface.IDataContext,``0,System.Boolean)">
+            <summary>
+              <para>Adds the passed object checking unique constraints to match existing data</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.ClearReferenceData(Antix.Data.Entity.Interface.IDataContext)">
+            <summary>
+              <para>Clear static reference data</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.LoadReferenceData(Antix.Data.Entity.Interface.IDataContext)">
+            <summary>
+              <para>Load static reference data</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.Initialize(Antix.Data.Entity.Interface.Security.ISecurityDataContext,System.Collections.Generic.IEnumerable{System.Reflection.Assembly})">
+            <summary>
+              <para>Initialise all permissions in the system</para>
+            </summary>
+            <returns> A list of permissions </returns>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.GetPermissionNames(System.Type)">
+            <summary>
+              <para>Get the names of the permissions given the enum</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.GetFullName(System.Enum)">
+            <summary>
+              <para>Get the full name of the enum value</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.GetFullName(System.Type,Antix.Data.Entity.PermissionTypesAttribute,System.String)">
+            <summary>
+              <para>Get the full name of the enum value</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.UpdateDatabaseStructure(System.Data.Entity.Infrastructure.IObjectContextAdapter)">
+            <summary>
+              <para>Update the database structure for the context</para>
+            </summary>
+            <param name="adapter"> Context </param>
+            <returns> True if changes </returns>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.GetAttributes``1(System.Reflection.ICustomAttributeProvider,System.Boolean)">
+            <summary>
+              <para>Return custom attributes for a provider</para>
+            </summary>
+            <typeparam name="TAttribute"> Type of attribute to return </typeparam>
+            <param name="provider"> Type to check for attributes on </param>
+            <param name="inherit"> Get inherited attributes </param>
+            <returns> An array of attributes </returns>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.GetAttributes``1(System.Reflection.ICustomAttributeProvider)">
+            <summary>
+              <para>Return custom attributes for a provider</para>
+            </summary>
+            <typeparam name="TAttribute"> Type of attribute to return </typeparam>
+            <param name="provider"> Type to check for attributes on </param>
+            <returns> An array of attributes </returns>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.GetAttribute``1(System.Reflection.ICustomAttributeProvider,System.Boolean)">
+            <summary>
+              <para>Return first custom attribute for a provider</para>
+            </summary>
+            <typeparam name="TAttribute"> Type of attribute to return </typeparam>
+            <param name="provider"> Type to check for attributes on </param>
+            <param name="inherit"> Get inherited attributes </param>
+            <returns> An attribute </returns>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.GetAttribute``1(System.Reflection.ICustomAttributeProvider)">
+            <summary>
+              <para>Return first custom attribute for a provider</para> <para>Gets inherited attributes too</para>
+            </summary>
+            <typeparam name="TAttribute"> Type of attribute to return </typeparam>
+            <param name="provider"> Type to check for attributes on </param>
+            <returns> An attribute </returns>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.ToMailAddress(Antix.Data.Entity.Interface.Security.IUserData)">
+            <summary>
+              <para>Get a MailAddress for a user</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.IsIdentified(Antix.Data.Entity.Interface.Security.ISecurityDataContext,Antix.Data.Entity.Interface.Security.IUserData)">
+            <summary>
+              <para>Check whether the user passed is the currently identified user</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.IsAuthenticated(Antix.Data.Entity.Interface.Security.ISecurityDataContext,Antix.Data.Entity.Interface.Security.IUserData)">
+            <summary>
+              <para>Check whether the user passed is the currently authenticated user</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.MapItem``2(Antix.Data.Entity.Interface.IDataContext,``0,System.Linq.Expressions.Expression{System.Func{``1}})">
+            <summary>
+              <para>Map object data to another object</para>
+            </summary>
+            <typeparam name="TFrom"> From type </typeparam>
+            <typeparam name="TTo"> To type </typeparam>
+            <param name="context"> Data context </param>
+            <param name="from"> From object </param>
+            <param name="toProperty"> To object </param>
+            <exception cref="T:Antix.Data.DataMappingException"></exception>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.MapItems``2(Antix.Data.Entity.Interface.IDataContext,System.Collections.Generic.IEnumerable{``0},System.Linq.Expressions.Expression{System.Func{System.Collections.Generic.IEnumerable{``1}}})">
+            <summary>
+              <para>Map object data to another object</para>
+            </summary>
+            <typeparam name="TFrom"> From type </typeparam>
+            <typeparam name="TTo"> To type </typeparam>
+            <param name="context"> Data context </param>
+            <param name="fromItems"> From collection </param>
+            <param name="toProperty"> To property </param>
+            <exception cref="T:Antix.Data.DataMappingException"></exception>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.MapItem``2(Antix.Data.Entity.Interface.IDataContext,``0,``1)">
+            <summary>
+              <para>Map object data to another object</para>
+            </summary>
+            <typeparam name="TFrom"> From type </typeparam>
+            <typeparam name="TTo"> To type </typeparam>
+            <param name="context"> Data context </param>
+            <param name="from"> From object </param>
+            <param name="to"> To object </param>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.MapItems``2(Antix.Data.Entity.Interface.IDataContext,System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Object},System.Collections.Generic.IEnumerable{``1},System.Func{``1,System.Object})">
+            <summary>
+              <para>Map from a collection to another</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.MapItems``2(Antix.Data.Entity.Interface.IDataContext,System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1})">
+            <summary>
+              <para>Map values to a new collection</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.MapItems``2(Antix.Data.Entity.Interface.IDataContext,``0[],System.Func{``0,System.Object},``1[],System.Func{``1,System.Object})">
+            <summary>
+              <para>Map values to a new collection</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.MapItems``2(Antix.Data.Entity.Interface.IDataContext,``0[],``1[])">
+            <summary>
+              <para>Map values to a new collection</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.GetById``1(System.Linq.IQueryable{``0},System.Int32)">
+            <summary>
+              <para>Get IData by id</para>
+            </summary>
+            <typeparam name="T"> IData type </typeparam>
+            <param name="source"> Source </param>
+            <param name="id"> Id </param>
+            <returns> Item or exception if not found </returns>
+            <exception cref="T:Antix.Data.Entity.DataNotFoundException">Thrown when data not found by id</exception>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.TryGetById``1(System.Linq.IQueryable{``0},System.Int32)">
+            <summary>
+              <para>Get IData by id</para>
+            </summary>
+            <typeparam name="T"> IData type </typeparam>
+            <param name="source"> Source </param>
+            <param name="id"> Id </param>
+            <returns> Item or null </returns>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.GetByName``1(System.Collections.Generic.IEnumerable{``0},System.String)">
+            <summary>
+              <para>Get named item by name</para>
+            </summary>
+            <exception cref="T:Antix.Data.Entity.NamedNotFoundException">When not found</exception>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.TryGetByName``1(System.Collections.Generic.IEnumerable{``0},System.String)">
+            <summary>
+              <para>Get named item by name</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.GetMessage(System.Data.Entity.Validation.DbEntityValidationException)">
+            <summary>
+              <para>Get a readable message from the validation exception</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.AddDataContext``1(System.Collections.Generic.IDictionary{System.Object,System.Object},``0)">
+            <summary>
+              <para>Set the dataContext for the validation context items collection</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Extensions.GetDataContext``1(System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>
+              <para>Get the dataContext from the validation context</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Entity.Extensions.DbSetWrapper`1">
+            <summary>
+              <para>Provides access to expected methods on IDbSet Generic via a non-generic type</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Interface.Site.Extensions.RenamePageTags(Antix.Data.Entity.Interface.Site.ISiteDataContext,System.Collections.Generic.IEnumerable{System.String},System.String)">
+            <summary>
+              <para>Rename the given tags</para>
+            </summary>
+            <param name = "fromNames">From names</param>
+            <param name = "to">To names</param>
+        </member>
+        <member name="M:Antix.Data.Entity.Interface.Site.Extensions.DeletePageTags(Antix.Data.Entity.Interface.Site.ISiteDataContext,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+              <para>Delete Page tags by name</para>
+            </summary>
+        </member>
+        <member name="T:Antix.ReflectionQuery.Extensions">
+            <summary>
+              <para>Static class containing Extension methods for Reflection Query</para>
+            </summary>
+        </member>
+        <member name="F:Antix.ReflectionQuery.Extensions.FilterRE">
+            <summary>
+              <para>Regex to find filters in a query</para>
+              <para>Matches operators to check for values in sub objects e.g. Path=Value</para>
+              <para>Matches numeric values which are considered indexers</para>
+            </summary>
+        </member>
+        <member name="M:Antix.ReflectionQuery.Extensions.GetValue``1(System.Object,System.String)">
+            <summary>
+              <para>Get the first value given a query</para>
+            </summary>
+            <typeparam name = "T">Value type</typeparam>
+            <param name = "data">Data</param>
+            <param name = "query">Query</param>
+            <returns>First or throws sequence exception</returns>
+        </member>
+        <member name="M:Antix.ReflectionQuery.Extensions.GetValue``1(System.Object,System.String,``0)">
+            <summary>
+              <para>Get the first value given a query</para>
+            </summary>
+            <typeparam name = "T">Value type</typeparam>
+            <param name = "data">Data</param>
+            <param name = "query">Query</param>
+            <param name = "def">Default value</param>
+            <returns>First or default</returns>
+        </member>
+        <member name="M:Antix.ReflectionQuery.Extensions.GetValues``1(System.Object,System.String)">
+            <summary>
+              <para>Query an object using reflection</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Entity.Interface.Security.ISecurityDataContext">
+            <summary>
+              <para>Data Context</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Entity.Interface.IDataContext">
+            <summary>
+              <para>Interface for a DataContext object</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Interface.IDataContext.GetQuery``1(System.Type)">
+            <summary>
+              <para>Get a query for the type passed</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Interface.IDataContext.SaveChanges">
+            <summary>
+              <para>Save changes to the database</para>
+            </summary>
+            <returns>The number of objects in an Added, Modified, or Deleted state when SaveChanges was called</returns>
+        </member>
+        <member name="M:Antix.Data.Entity.Interface.Security.ISecurityDataContext.GetUserPermissions(Antix.Data.Entity.Interface.Security.IUserData)">
+            <summary>
+              <para>Get permissions for the user passed</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.ISecurityDataContext.IsSystemSession">
+            <summary>
+              <para>System Session</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.ISecurityDataContext.CurrentUser">
+            <summary>
+              <para>User Hash Provider</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.ISecurityDataContext.Users">
+            <summary>
+              <para>Query Users</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.ISecurityDataContext.Permissions">
+            <summary>
+              <para>Query Permissions</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Interface.Site.ISiteDataContext.GetPagePaths(System.Int32)">
+            <summary>
+              <para>Get all page paths given a page id</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Interface.Site.ISiteDataContext.GetPagePathInfo(System.String)">
+            <summary>
+              <para>Get page path info given a path</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Site.ISiteDataContext.Pages">
+            <summary>
+              <para>Query Pages</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Site.ISiteDataContext.PageTags">
+            <summary>
+              <para>Query Page Tags</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Site.ISiteDataContext.PageNotes">
+            <summary>
+              <para>Query Page Notes</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Site.ISiteDataContext.PageTemplates">
+            <summary>
+              <para>Query Page Templates</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Site.ISiteDataContext.PagePathSegments">
+            <summary>
+              <para>Query Page Path Segments</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Site.ISiteDataContext.PageContentLinks">
+            <summary>
+              <para>Query Page Content Links</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Entity.Interface.Security.ICurrentUserProvider">
+            <summary>
+              <para>Gets and sets the user hash values for identified users</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Interface.Security.ICurrentUserProvider.Identify(Antix.Data.Entity.Interface.Security.IUserData)">
+            <summary>
+              <para>Identify the user</para>
+            </summary>
+            <param name="user"> User </param>
+        </member>
+        <member name="M:Antix.Data.Entity.Interface.Security.ICurrentUserProvider.ClearIdentification">
+            <summary>
+              <para>Clear identified user</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Interface.Security.ICurrentUserProvider.Authenticate(Antix.Data.Entity.Interface.Security.IUserData,System.Boolean)">
+            <summary>
+              <para>Authenticate the user</para>
+            </summary>
+            <param name="user"> User </param>
+            <param name="remember"> Remember </param>
+        </member>
+        <member name="M:Antix.Data.Entity.Interface.Security.ICurrentUserProvider.ClearAuthentication">
+            <summary>
+              <para>Clear identified user</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Interface.Security.ICurrentUserProvider.HasPermission(System.Enum[])">
+            <summary>
+              <para>Returns whether or not the current user has any of the permissions passed</para>
+            </summary>
+            <param name="anyOf"> Any of the permissions </param>
+            <returns> True if the user has any of the permission passed </returns>
+        </member>
+        <member name="M:Antix.Data.Entity.Interface.Security.ICurrentUserProvider.GrantPermission(System.Enum[])">
+            <summary>
+              <para>Grant the given permission to the current user</para>
+            </summary>
+            <param name="allOf"> Grant all passed </param>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.ICurrentUserProvider.IsIdentified">
+            <summary>
+              <para>User is identified</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.ICurrentUserProvider.IdentifiedHash">
+            <summary>
+              <para>Identified user hash</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.ICurrentUserProvider.Identified">
+            <summary>
+              <para>Identified user</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.ICurrentUserProvider.IdentifiedId">
+            <summary>
+              <para>Identified user id</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.ICurrentUserProvider.IsAuthenticated">
+            <summary>
+              <para>User is authenticated</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.ICurrentUserProvider.AuthenticatedHash">
+            <summary>
+              <para>Authenticated user hash</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.ICurrentUserProvider.Authenticated">
+            <summary>
+              <para>Authenticated user</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.ICurrentUserProvider.AuthenticatedId">
+            <summary>
+              <para>Authenticated user id</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.ICurrentUserProvider.LogOnUrl">
+            <summary>
+              <para>Log on url</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.ICurrentUserProvider.DefaultUrl">
+            <summary>
+              <para>Default Url</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Data.DataResolver`1">
+            <summary>
+              <para>DataResolver</para>
+              <para>For use with IoC pattern containers, e.g. Ninject</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Data.DataResolver">
+            <summary>
+              <para>DataResolver</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.DataResolver.GetService``1">
+            <summary>
+              <para>Get the service for the given type</para>
+              <para>Calls the container directly no protection again exceptions</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.DataResolver.GetService(System.Type)">
+            <summary>
+              <para>Get the service for the given type</para>
+              <para>Calls the container directly no protection again exceptions</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.DataResolver.GetServices``1">
+            <summary>
+              <para>Get all services for the given type</para>
+            </summary>
+            <typeparam name = "TService">Type of service</typeparam>
+            <returns>Enumerable of the services found, never null can be empty</returns>
+        </member>
+        <member name="M:Antix.Data.DataResolver.GetServices(System.Type)">
+            <summary>
+              <para>Get all services for the given type</para>
+            </summary>
+            <param name = "serviceType">Type of service</param>
+            <returns>Enumerable of the services found, never null can be empty</returns>
+        </member>
+        <member name="M:Antix.Data.DataResolver.TryGetService``1">
+            <summary>
+              <para>Try to get the service for the given type</para>
+              <para>Returns default (null) if not found</para>
+              <para>Protects agains errors thrown by the container, which are logged if config setting is on</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.DataResolver.TryGetService(System.Type)">
+            <summary>
+              <para>Try to get the service for the given type</para>
+              <para>Returns default (null) if not found</para>
+              <para>Protects agains errors thrown by the container, which are logged if config setting is on</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.DataResolver.SetCurrent(Antix.Data.DataResolver)">
+            <summary>
+              <para>Set the current resolver</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.DataResolver.SetCurrent(System.Func{System.Type,System.Object},System.Func{System.Type,System.Collections.Generic.IEnumerable{System.Object}},System.Func{System.Type,System.Object})">
+            <summary>
+              <para>Set methods for service location</para>
+              <para>Creates a static DataResolver instance</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.DataResolver.GetReferenceData``1">
+            <summary>
+              <para>Get Reference Data</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.DataResolver.AddMap``3(System.Action{``0,``1,``2})">
+            <summary>
+              <para>Add a new map</para>
+            </summary>
+            <typeparam name = "TFrom">From Type</typeparam>
+            <typeparam name = "TTo">To Type</typeparam>
+            <typeparam name = "TContext">Data Context Type</typeparam>
+            <param name = "map">Mapping delegate</param>
+        </member>
+        <member name="M:Antix.Data.DataResolver.AddMap``2(System.Action{``0,``1,Antix.Data.Entity.Interface.IDataContext})">
+            <summary>
+              <para>Add a new map</para>
+            </summary>
+            <typeparam name = "TFrom">From Type</typeparam>
+            <typeparam name = "TTo">To Type</typeparam>
+            <param name = "map">Mapping delegate</param>
+        </member>
+        <member name="M:Antix.Data.DataResolver.AddMap``2(System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+              <para>Add Map for a projection</para>
+            </summary>
+            <typeparam name = "TFrom"></typeparam>
+            <typeparam name = "TTo"></typeparam>
+            <param name = "map"></param>
+        </member>
+        <member name="M:Antix.Data.DataResolver.AddProjection``2(System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+              <para>Add Map for a projection</para>
+            </summary>
+            <typeparam name = "TFrom"></typeparam>
+            <typeparam name = "TTo"></typeparam>
+            <param name = "map"></param>
+        </member>
+        <member name="M:Antix.Data.DataResolver.GetMap(System.Type,System.Type)">
+            <summary>
+              <para>Get a map</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.DataResolver.Map(System.Type,System.Type,System.Object,System.Object,Antix.Data.Entity.Interface.IDataContext)">
+            <summary>
+              <para>Map object data to another object</para>
+            </summary>
+            <param name = "fromType">From type</param>
+            <param name = "toType">To type</param>
+            <param name = "from">From object</param>
+            <param name = "to">To object</param>
+            <param name = "context">Data context</param>
+        </member>
+        <member name="M:Antix.Data.DataResolver.Map``2(``0,``1,Antix.Data.Entity.Interface.IDataContext)">
+            <summary>
+              <para>Map object data to another object</para>
+            </summary>
+            <typeparam name = "TFrom">From type</typeparam>
+            <typeparam name = "TTo">To type</typeparam>
+            <param name = "from">From object</param>
+            <param name = "to">To object</param>
+            <param name = "context">Data context</param>
+        </member>
+        <member name="M:Antix.Data.DataResolver.Map``2">
+            <summary>
+              <para>Get a map</para>
+            </summary>
+            <typeparam name = "TFrom"></typeparam>
+            <typeparam name = "TTo"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Antix.Data.DataResolver.GetResource(System.Type,System.String)">
+            <summary>
+              <para>Get a resource for the model type and name</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.DataResolver.UseResource``1">
+            <summary>
+              <para>Register the use of a resource type for a given number of types</para>
+              <para>When no types are passed the resource usage will be global where no override exist</para>
+            </summary>
+            <typeparam name = "TResource">Resource Type</typeparam>
+        </member>
+        <member name="M:Antix.Data.DataResolver.BindAddIn(System.String,System.Reflection.Assembly)">
+            <summary>
+              <para>Bind add-in</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.DataResolver.UnbindAddIn(System.String,System.Reflection.Assembly)">
+            <summary>
+              <para>Unbind add-in</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.DataResolver.InitAddIns(System.String)">
+            <summary>
+              <para>Initialize add-ins</para>
+            </summary>
+            <param name = "storeRootPath">Path to assembly storage</param>
+        </member>
+        <member name="M:Antix.Data.DataResolver.InstallAddIn(System.IO.Stream,System.String)">
+            <summary>
+              <para>Install an add-in</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.DataResolver.UninstallAddIn(System.String)">
+            <summary>
+              <para>Uninstall an add-in</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.DataResolver.LoadAddIn(System.String,System.String)">
+            <summary>
+              <para>Load add-in</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.DataResolver.Container">
+            <summary>
+              <para>Container</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.DataResolver.MethodContainer">
+            <summary>
+              <para>Container</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.DataResolver.Current">
+            <summary>
+              <para>Instance of the data resolver</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.DataResolver.InstalledAddIns">
+            <summary>
+              <para>Get all installed add-in assemblies</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Data.DataResolver.Usage`1">
+            <summary>
+              <para>Resource Usage</para>
+            </summary>
+            <typeparam name = "TResource">Type of resource</typeparam>
+        </member>
+        <member name="M:Antix.Data.DataResolver.Usage`1.For``1">
+            <summary>
+              <para>Set the type to use the specified resource</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Data.DataResolver.DataAddInInfo">
+            <summary>
+              <para>Add-in info</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.DataResolver`1.Container">
+            <summary>
+              <para>Type the container</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Management.DatabaseColumnCollection">
+            <summary>
+              Database Column Collection
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Management.DatabaseObjectCollection`1">
+            <summary>
+            <para>DatabaseObjectCollection</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseObjectCollection`1.#ctor(Antix.Data.Management.DatabaseServer)">
+            <summary>
+              Create a collection
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseObjectCollection`1.Clear">
+            <summary>
+              Clear the collection
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseObjectCollection`1.Contains(System.String)">
+            <summary>
+              Check key is in the items collection
+            </summary>
+            <param name = "key">key</param>
+            <returns>True if found</returns>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseObjectCollection`1.Add(`0)">
+            <summary>
+              Add item
+            </summary>
+            <param name = "item">Item</param>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseObjectCollection`1.Remove(`0)">
+            <summary>
+              <para>Remove an item</para>
+            </summary>
+            <param name = "item">Item to remove</param>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseObjectCollection`1.Remove(System.String)">
+            <summary>
+              <para>Remove an item by key</para>
+            </summary>
+            <param name = "key">Key</param>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseObjectCollection`1.Script">
+            <summary>
+              <para>Script all items in the collection</para>
+            </summary>
+            <returns>Sql script</returns>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseObjectCollection`1.Script(System.Text.StringBuilder)">
+            <summary>
+              Script each item in the collection
+            </summary>
+            <param name = "sql">Sql</param>
+            <returns>Script created</returns>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseObjectCollection`1.Save(System.Data.SqlClient.SqlConnection)">
+            <summary>
+              Save each item in the collection
+            </summary>
+            <param name = "conn">Connection</param>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseObjectCollection`1.ResetStatus">
+            <summary>
+              <para>Reset the status and remove if deleted</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseObjectCollection`1.GetEnumerator">
+            <summary>
+              Enumerate the collection
+            </summary>
+            <returns>IEnumerator</returns>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseObjectCollection`1.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+              Enumerate the collection
+            </summary>
+            <returns>IEnumerator</returns>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseObjectCollection`1.Count">
+            <summary>
+              Number of items in the collection
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseColumnCollection.#ctor(Antix.Data.Management.DatabaseTable)">
+            <summary>
+              Create collection
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseColumnCollection.Add(System.String)">
+            <summary>
+              <para>Add new column</para>
+            </summary>
+            <param name = "name">Column name</param>
+            <returns>New column</returns>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseColumnCollection.Add(System.String,System.String,System.Int32,System.Boolean,System.String)">
+            <summary>
+              Add a new column
+            </summary>
+            <param name = "name">Column name</param>
+            <param name = "typeName"></param>
+            <param name = "length"></param>
+            <param name = "allowNull"></param>
+            <param name = "defaultValue"></param>
+            <returns>New column</returns>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseColumnCollection.Add(Antix.Data.Management.DatabaseColumn)">
+            <summary>
+              Add Existing item to collection
+            </summary>
+            <param name = "item"></param>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseColumnCollection.Refresh">
+            <summary>
+              Get all columns in a table
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseColumnCollection.TrimValue(System.String)">
+            <summary>
+              Remove starting and ending brackets
+            </summary>
+            <param name = "value"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseColumnCollection.Item(System.String)">
+            <summary>
+              Get item by name, if not found a new one is passed back
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseColumnCollection.Item(System.String,System.Boolean)">
+            <summary>
+              Get item by name, if not found a new one is passed back
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Management.DatabaseCollection">
+            <summary>
+              DatabaseCollection
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseCollection.#ctor(Antix.Data.Management.DatabaseServer)">
+            <summary>
+              Create collection
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseCollection.Add(System.String)">
+            <summary>
+              Add a new database
+            </summary>
+            <param name = "name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseCollection.Add(Antix.Data.Management.Database)">
+            <summary>
+              Add Existing item to collection
+            </summary>
+            <param name = "item"></param>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseCollection.Refresh">
+            <summary>
+              Get all databases on server
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseCollection.Item(System.String)">
+            <summary>
+              Get item by name, if not found a new one is passed back
+            </summary>
+            <param name = "name">Name</param>
+            <returns>Database</returns>
+        </member>
+        <member name="T:Antix.Data.Entity.Interface.Security.IUserAuditData">
+            <summary>
+              <para>A user auditable</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Entity.Interface.IAuditData">
+            <summary>
+              <para>Interface for an auditable to object, having the created and updated date and time stored</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.IAuditData.CreatedOn">
+            <summary>
+              <para>Created on date time</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.IAuditData.UpdatedOn">
+            <summary>
+              <para>Updated on date time</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Entity.PermissionTypesAttribute">
+            <summary>
+              <para>Permission Types</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.PermissionTypesAttribute.Name">
+            <summary>
+              <para>Name of the permission Types</para>
+              <para>Must be unique in the system</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Entity.NamedNotFoundException">
+            <summary>
+            <para>Named item not found</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.NamedNotFoundException.#ctor(System.String)">
+            <summary>
+            <para>Named item not found</para>
+            </summary>
+            <param name="name">Name not found</param>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseServer.#ctor">
+            <summary>
+              Create a new database server
+            </summary>
+        </member>
+        <member name="F:Antix.Data.Management.DatabaseServer._connectionString">
+            <summary>
+              Connection string to the server
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseServer.GetConnectionString(Antix.Data.Management.Database)">
+            <summary>
+              <para>Get a connection string for the given db</para>
+              <para>If none is supplied then the connection string for the master is returned</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseServer.Connect(System.String)">
+            <summary>
+              Connect to sql server
+            </summary>
+            <param name = "connectionString">Connection string</param>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseServer.Name">
+            <summary>
+              Connected Server name
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseServer.Databases">
+            <summary>
+              Databases on this server
+            </summary>
+        </member>
+        <member name="T:LinqKit.ExpressionVisitor">
+            <summary>
+            This comes from Matt Warren's sample:
+            http://blogs.msdn.com/mattwar/archive/2007/07/31/linq-building-an-iqueryable-provider-part-ii.aspx
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Entity.Interface.Security.IUserGroupData">
+            <summary>
+              <para>User Group link</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.IUserGroupData.UserId">
+            <summary>
+              <para>User Id</para>
+              <para>Implementing class code </para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.IUserGroupData.User">
+            <summary>
+              <para>User object</para>
+            </summary>
+            <example>
+              [ForeignKey("UserId")]
+              public User User { get; set; }
+            
+              private int _userId;
+              public virtual int UserId {
+              get { return User == null ? _userId : User.Id; }
+              set { _userId = value; }
+              }
+            
+              IUserData IUserGroupData.User {
+              get { return User; }
+              set { User = (User)value; }
+              }
+            </example>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.IUserGroupData.GroupId">
+            <summary>
+              <para>Group Id</para>
+              <para>Implementing class code </para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.IUserGroupData.Group">
+            <summary>
+              <para>Group object</para>
+            </summary>
+            <example>
+              [ForeignKey("GroupId")]
+              public Group Group { get; set; }
+            
+              private int _groupId;
+              public virtual int GroupId {
+              get { return Group == null ? _groupId : Group.Id; }
+              set { _groupId = value; }
+              }
+            
+              IGroupData IUserGroupData.Group {
+              get { return Group; }
+              set { Group = (Group)value; }
+              }
+            </example>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.IGroupSecurityDataContext.UserGroups">
+            <summary>
+              <para>Query User Groups</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.IGroupSecurityDataContext.Groups">
+            <summary>
+              <para>Query Groups</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.IGroupSecurityDataContext.GroupPermissions">
+            <summary>
+              <para>Query Group Permissions</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.IGroupSecurityDataContext.Users">
+            <summary>
+              <para>Query Users</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Entity.Interface.IOperationStatusData">
+            <summary>
+              <para>Operation Status data</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.IOperationStatusData.Identifier">
+            <summary>
+              <para>Unique identifier (non-contiguous)</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.IOperationStatusData.IsCancelled">
+            <summary>
+              <para>Operation is cancelled</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.IOperationStatusData.IsComplete">
+            <summary>
+              <para>Operation is complete</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.IOperationStatusData.Text">
+            <summary>
+              <para>Operation text</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.IOperationStatusData.ProgressPercentage">
+            <summary>
+              <para>Operation progress percentage</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Entity.Interface.IReferenceData`1">
+            <summary>
+              <para>Interface for statically held reference data</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.IReferenceData`1.Text">
+            <summary>
+              <para>Text display</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Data.DataServiceContainerNotSetException">
+            <summary>
+              <para>DataServiceNotFoundException</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.DataServiceContainerNotSetException.#ctor">
+            <summary>
+              <para>Create</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Data.DataMethodContainer">
+            <summary>
+              <para>Method Container</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.DataMethodContainer.#ctor(System.Func{System.Type,System.Object},System.Func{System.Type,System.Collections.Generic.IEnumerable{System.Object}},System.Func{System.Type,System.Object})">
+            <summary>
+              <para>Simple method base service provider</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.DataMethodContainer.GetService(System.Type)">
+            <summary>
+              <para>Gets the service object of the specified type.</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.DataMethodContainer.TryGetService(System.Type)">
+            <summary>
+              <para>Gets the service object of the specified type.</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.DataMethodContainer.GetServices(System.Type)">
+            <summary>
+              <para>Gets the service object of the specified type.</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Entity.Interface.Security.IUserData">
+            <summary>
+              <para>Interface for user to</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Interface.Security.IUserData.RenewIdentificationHash(System.DateTime)">
+            <summary>
+              <para>Renew the identification hash</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Interface.Security.IUserData.ClearIdentificationHash">
+            <summary>
+              <para>Clear the identification hash</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Interface.Security.IUserData.RenewAuthenicationHash(System.DateTime)">
+            <summary>
+              <para>Renew the authentication hash</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Interface.Security.IUserData.ClearAuthenticationHash">
+            <summary>
+              <para>Clear the authentication hash</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.IUserData.IsActive">
+            <summary>
+              <para>Active user, can log on</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.IUserData.Name">
+            <summary>
+              <para>Name</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.IUserData.Email">
+            <summary>
+              <para>E-mail address</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.IUserData.IsSuper">
+            <summary>
+              <para>Is this a super user</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.IUserData.EmailConfirmedOn">
+            <summary>
+              <para>Date and Time the e-mail was confirmed on</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.IUserData.PasswordHash">
+            <summary>
+              <para>password hashed</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.IUserData.IdentificationHash">
+            <summary>
+              <para>Identification Hash</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.IUserData.IdentificationValidTo">
+            <summary>
+              <para>Date and time the identification hash is valid to</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.IUserData.AuthenticationHash">
+            <summary>
+              <para>Authentication Hash</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.IUserData.AuthenticationValidTo">
+            <summary>
+              <para>Date and time the hash is valid to</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Entity.DataCollectionWrapper`2">
+            <summary>
+              <para>Wraps a collection of concrete objects exposing a collection of a implemented interface</para>
+              <para>
+                The objects being added to this collection can only be of type TData or derived,
+                adding anything other will cause a run-time error   
+              </para>
+            </summary>
+            <typeparam name = "TData">Concrete item type</typeparam>
+            <typeparam name = "TInterface">Interface</typeparam>
+        </member>
+        <member name="M:Antix.Data.Entity.DataCollectionWrapper`2.GetEnumerator">
+            <summary>
+              Returns an enumerator that iterates through the collection.
+            </summary>
+            <returns>
+              A <see cref = "T:System.Collections.Generic.IEnumerator`1" /> that can be used to iterate through the collection.
+            </returns>
+            <filterpriority>1</filterpriority>
+        </member>
+        <member name="M:Antix.Data.Entity.DataCollectionWrapper`2.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+              Returns an enumerator that iterates through a collection.
+            </summary>
+            <returns>
+              An <see cref = "T:System.Collections.IEnumerator" /> object that can be used to iterate through the collection.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Antix.Data.Entity.DataCollectionWrapper`2.Add(`1)">
+            <summary>
+              Adds an item to the <see cref = "T:System.Collections.Generic.ICollection`1" />.
+            </summary>
+            <param name = "item">The object to add to the <see cref = "T:System.Collections.Generic.ICollection`1" />.</param>
+            <exception cref = "T:System.NotSupportedException">The <see cref = "T:System.Collections.Generic.ICollection`1" /> is read-only.</exception>
+        </member>
+        <member name="M:Antix.Data.Entity.DataCollectionWrapper`2.Clear">
+            <summary>
+              Removes all items from the <see cref = "T:System.Collections.Generic.ICollection`1" />.
+            </summary>
+            <exception cref = "T:System.NotSupportedException">The <see cref = "T:System.Collections.Generic.ICollection`1" /> is read-only. </exception>
+        </member>
+        <member name="M:Antix.Data.Entity.DataCollectionWrapper`2.Contains(`1)">
+            <summary>
+              Determines whether the <see cref = "T:System.Collections.Generic.ICollection`1" /> contains a specific value.
+            </summary>
+            <returns>
+              true if <paramref name = "item" /> is found in the <see cref = "T:System.Collections.Generic.ICollection`1" />; otherwise, false.
+            </returns>
+            <param name = "item">The object to locate in the <see cref = "T:System.Collections.Generic.ICollection`1" />.</param>
+        </member>
+        <member name="M:Antix.Data.Entity.DataCollectionWrapper`2.CopyTo(`1[],System.Int32)">
+            <summary>
+              Copies the elements of the <see cref = "T:System.Collections.Generic.ICollection`1" /> to an <see
+               cref = "T:System.Array" />, starting at a particular <see cref = "T:System.Array" /> index.
+            </summary>
+            <param name = "array">The one-dimensional <see cref = "T:System.Array" /> that is the destination of the elements copied from <see
+               cref = "T:System.Collections.Generic.ICollection`1" />. The <see cref = "T:System.Array" /> must have zero-based indexing.</param>
+            <param name = "arrayIndex">The zero-based index in <paramref name = "array" /> at which copying begins.</param>
+            <exception cref = "T:System.ArgumentNullException"><paramref name = "array" /> is null.</exception>
+            <exception cref = "T:System.ArgumentOutOfRangeException"><paramref name = "arrayIndex" /> is less than 0.</exception>
+            <exception cref = "T:System.ArgumentException"><paramref name = "array" /> is multidimensional.-or-The number of elements in the source <see
+               cref = "T:System.Collections.Generic.ICollection`1" /> is greater than the available space from <paramref
+               name = "arrayIndex" /> to the end of the destination <paramref name = "array" />.-or-Type <paramref name = "T" /> cannot be cast automatically to the type of the destination <paramref
+               name = "array" />.</exception>
+        </member>
+        <member name="M:Antix.Data.Entity.DataCollectionWrapper`2.Remove(`1)">
+            <summary>
+              Removes the first occurrence of a specific object from the <see cref = "T:System.Collections.Generic.ICollection`1" />.
+            </summary>
+            <returns>
+              true if <paramref name = "item" /> was successfully removed from the <see
+               cref = "T:System.Collections.Generic.ICollection`1" />; otherwise, false. This method also returns false if <paramref
+               name = "item" /> is not found in the original <see cref = "T:System.Collections.Generic.ICollection`1" />.
+            </returns>
+            <param name = "item">The object to remove from the <see cref = "T:System.Collections.Generic.ICollection`1" />.</param>
+            <exception cref = "T:System.NotSupportedException">The <see cref = "T:System.Collections.Generic.ICollection`1" /> is read-only.</exception>
+        </member>
+        <member name="P:Antix.Data.Entity.DataCollectionWrapper`2.Count">
+            <summary>
+              Gets the number of elements contained in the <see cref = "T:System.Collections.Generic.ICollection`1" />.
+            </summary>
+            <returns>
+              The number of elements contained in the <see cref = "T:System.Collections.Generic.ICollection`1" />.
+            </returns>
+        </member>
+        <member name="P:Antix.Data.Entity.DataCollectionWrapper`2.IsReadOnly">
+            <summary>
+              Gets a value indicating whether the <see cref = "T:System.Collections.Generic.ICollection`1" /> is read-only.
+            </summary>
+            <returns>
+              true if the <see cref = "T:System.Collections.Generic.ICollection`1" /> is read-only; otherwise, false.
+            </returns>
+        </member>
+        <member name="T:Antix.Data.Management.DatabaseIndex">
+            <summary>
+              Database Index
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseIndex.#ctor(Antix.Data.Management.DatabaseTable)">
+            <summary>
+              Create a new index with defaults
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseIndex.#ctor(System.String,System.String,System.Boolean,Antix.Data.Management.DatabaseTable)">
+            <summary>
+              Create an existing column object
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseIndex.ContainsColumn(Antix.Data.Management.DatabaseColumn)">
+            <summary>
+              <para>Does this index contain the column passed</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseIndex.GetColumns">
+            <summary>
+              <para>Get the table columns used in this index</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseIndex.Key">
+            <summary>
+              Key for this object
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseIndex.Columns">
+            <summary>
+              Columns in the index eg "Name, DateOfBirth DESC"
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseIndex.IsUnique">
+            <summary>
+              Index is unique
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Entity.Validation.UserAuditAttribute">
+            <summary>
+              <para>Updates audit to on validate</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Entity.Interface.Security.IGroupData">
+            <summary>
+              <para>Interface for group to</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.IGroupData.Name">
+            <summary>
+              <para>Name</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.IGroupData.IconId">
+            <summary>
+            <para>Icon Id</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.IGroupData.Icon">
+            <summary>
+            <para>Icon for this group</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.IGroupData.UserGroups">
+            <summary>
+              <para>Users</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.IGroupData.GroupPermissions">
+            <summary>
+              <para>Permissions</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Management.DatabaseTable">
+            <summary>
+              Database Table
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseTable.#ctor(Antix.Data.Management.Database)">
+            <summary>
+              <para>Create a new table</para>
+            </summary>
+            <param name = "database">Database</param>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseTable.#ctor(System.String,System.String,System.String,Antix.Data.Management.Database)">
+            <summary>
+              <para>Create an existing table object</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseTable.Script(System.Text.StringBuilder)">
+            <summary>
+              Generate script for this table
+            </summary>
+            <param name = "sql">Sql</param>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseTable.GetKey(System.String,System.String)">
+            <summary>
+              Get the key for the database table
+            </summary>
+            <param name = "schemaName">Schema</param>
+            <param name = "name">Name</param>
+            <returns>Key</returns>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseTable.GetReferences">
+            <summary>
+            <para>Get references for this table</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseTable.ImportXml(System.String,System.Data.SqlClient.SqlConnection)">
+            <summary>
+              Import an xml file into this table
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseTable.Key">
+            <summary>
+              Key for this object
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseTable.Schema">
+            <summary>
+              Schema for this table
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseTable.SchemaOriginal">
+            <summary>
+              Original Schema for this table
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseTable.Columns">
+            <summary>
+              <para>Columns</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseTable.Indexes">
+            <summary>
+              Indexes
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseObjectName.Value">
+            <summary>
+              Value of the database object name
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseObjectName.ValueOriginal">
+            <summary>
+              Original value of the database object name
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Entity.Interface.Site.IPageData">
+            <summary>
+              <para>Page Data</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Entity.Interface.Security.IOwnedData">
+            <summary>
+              <para>Denotes an object owned by a particular user</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Entity.Interface.Security.IGroupPermissionData">
+            <summary>
+              <para>Group Permission</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.IGroupPermissionData.GroupId">
+            <summary>
+              <para>Group Id</para>
+              <para>Implementing class code </para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.IGroupPermissionData.Group">
+            <summary>
+              <para>Group object</para>
+            </summary>
+            <example>
+              [ForeignKey("GroupId")]
+              public Group Group { get; set; }
+            
+              private int _groupId;
+              public int GroupId {
+              get { return Group == null ? _groupId : Group.Id; }
+              set { _groupId = value; }
+              }
+            
+              IGroupData IGroupPermissionData.Group {
+              get { return Group; }
+              set { Group = (Group)value; }
+              }
+            </example>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.IGroupPermissionData.PermissionId">
+            <summary>
+              <para>Permission Id</para>
+              <para>Implementing class code </para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.IGroupPermissionData.Permission">
+            <summary>
+              <para>Permission object</para>
+            </summary>
+            <example>
+              [ForeignKey("PermissionId")]
+              public Permission Permission { get; set; }
+            
+              private int _permissionId;
+              public virtual int PermissionId {
+              get { return Permission == null ? _permissionId : Permission.Id; }
+              set { _permissionId = value; }
+              }
+            
+              IPermissionData IGroupPermissionData.Permission {
+              get { return Permission; }
+              set { Permission = (Permission)value; }
+              }
+            </example>
+        </member>
+        <member name="T:Antix.Data.Management.DatabaseConfigurationException">
+            <summary>
+            <para>Exception thrown when Column configuration is in error</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Management.DatabaseReference">
+            <summary>
+              Database Reference (foreign key constraint)
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseReference.#ctor(Antix.Data.Management.Database)">
+            <summary>
+              Create a new reference with defaults
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseReference.#ctor(System.String,Antix.Data.Management.DatabaseColumn,Antix.Data.Management.DatabaseTable,Antix.Data.DeleteActionEnum,Antix.Data.Management.Database)">
+            <summary>
+              Create an existing reference object
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseReference.Key">
+            <summary>
+              Key for this object
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseReference.Database">
+            <summary>
+              Database
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseReference.Column">
+            <summary>
+              Column for parent id
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseReference.ReferencedTable">
+            <summary>
+              Reference table for this relationship
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseReference.DeleteAction">
+            <summary>
+              Delete to when parent to is deleted (Cascade Delete)
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Management.DatabaseReferenceCollection">
+            <summary>
+              Database Table Reference Collection
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseReferenceCollection.#ctor(Antix.Data.Management.Database)">
+            <summary>
+              Create collection
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseReferenceCollection.Add(System.String)">
+            <summary>
+              Add a new reference
+            </summary>
+            <param name="name"> Column name </param>
+            <returns> New reference </returns>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseReferenceCollection.Add(Antix.Data.Management.DatabaseReference)">
+            <summary>
+              Add Existing item to collection
+            </summary>
+            <param name="item"> </param>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseReferenceCollection.Refresh">
+            <summary>
+              Refresh all references
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseReferenceCollection.Item(System.String,System.Boolean)">
+            <summary>
+              Get item by name, if not found a new one is passed back
+            </summary>
+            <param name="name"> Name </param>
+            <param name="create"> Create if not found </param>
+            <returns> Database </returns>
+        </member>
+        <member name="T:System.Linq.Dynamic.DynamicQueryable">
+            <summary>
+              <para>Dynamic Linq</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Management.DatabaseIndexCollection">
+            <summary>
+              Database Index Collection
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseIndexCollection.#ctor(Antix.Data.Management.DatabaseTable)">
+            <summary>
+              Create collection
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseIndexCollection.Add(System.String)">
+            <summary>
+              Add a new index
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseIndexCollection.Add(System.String,System.String,System.Boolean)">
+            <summary>
+              Add a new index
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseIndexCollection.Add(Antix.Data.Management.DatabaseIndex)">
+            <summary>
+              Add Existing item to collection
+            </summary>
+            <param name = "item"></param>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseIndexCollection.Refresh">
+            <summary>
+              Get all indexes in a table
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseIndexCollection.Item(System.String)">
+            <summary>
+              Get item by name, if not found a new one is passed back
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseIndexCollection.Item(System.String,System.Boolean)">
+            <summary>
+              Get item by name, if not found a new one is passed back
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Entity.Interface.Site.IPageTemplateData">
+            <summary>
+              <para></para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Site.IPageTemplateData.Name">
+            <summary>
+              <para>Name</para>
+            </summary>
+            [MaxLength(20)]
+        </member>
+        <member name="T:Antix.Data.Entity.Interface.Site.IPageContentLinkData">
+            <summary>
+              <para>Page Content Link</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.Interface.Site.IPageContentLinkData.StatusCheck(System.Uri)">
+            <summary>
+              <para>Check the status of this link</para>
+            </summary>
+            <param name = "uri"></param>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Site.IPageContentLinkData.PageId">
+            <summary>
+              <para>Page</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Site.IPageContentLinkData.Url">
+            <summary>
+              <para>Url</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Site.IPageContentLinkData.Type">
+            <summary>
+              <para>Type of content</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Site.IPageContentLinkData.Status">
+            <summary>
+              <para>Status of link</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Site.IPageContentLinkData.StatusCheckedOn">
+            <summary>
+              <para>Date and time of the last check</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Management.DatabaseSchema">
+            <summary>
+              Database Schema
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseSchema.#ctor(Antix.Data.Management.Database)">
+            <summary>
+              Create a new schema
+            </summary>
+            <param name = "database">Database</param>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseSchema.#ctor(System.String,Antix.Data.Management.Database)">
+            <summary>
+              Create an existing Schema object
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseSchema.Key">
+            <summary>
+              Key for this object
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Management.DatabaseSchemaCollection">
+            <summary>
+              Database Schema Collection
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseSchemaCollection.#ctor(Antix.Data.Management.Database)">
+            <summary>
+              Create collection
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseSchemaCollection.Add(System.String)">
+            <summary>
+              Add new schema
+            </summary>
+            <param name = "name">Name of the schema</param>
+            <returns>New schema</returns>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseSchemaCollection.Add(Antix.Data.Management.DatabaseSchema)">
+            <summary>
+              Add Existing item to collection
+            </summary>
+            <param name = "item"></param>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseSchemaCollection.Refresh">
+            <summary>
+              Get all Schemas on server
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseSchemaCollection.Item(System.String)">
+            <summary>
+              Get by key
+            </summary>
+            <param name = "name">name</param>
+            <returns></returns>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseSchemaCollection.Item(System.String,System.Boolean)">
+            <summary>
+              Get by key
+            </summary>
+            <param name = "name">name</param>
+            <param name = "create">Create a new one if not found</param>
+            <returns></returns>
+        </member>
+        <member name="T:Antix.Data.Management.DatabaseColumn">
+            <summary>
+              Database Column
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseColumn.#ctor(Antix.Data.Management.DatabaseTable)">
+            <summary>
+              Create a new column with defaults
+            </summary>
+            <param name="table"> Table </param>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseColumn.#ctor(System.String,System.Boolean,System.String,System.Int32,System.Boolean,System.String,System.String,System.Byte,System.Byte,Antix.Data.Management.DatabaseTable)">
+            <summary>
+              Create an existing column object
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseColumn.Script(System.Text.StringBuilder)">
+            <summary>
+              Generate script for this column
+            </summary>
+            <param name="sql"> Sql </param>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseColumn.GetIndexes">
+            <summary>
+              <para>Get indexes this column is in</para>
+            </summary>
+            <returns> </returns>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseColumn.GetSqlDbType(System.String)">
+            <summary>
+              Get the sqlDbType
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseColumn.Key">
+            <summary>
+              Key for this object
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseColumn.Table">
+            <summary>
+              <para>Table</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseColumn.TypeName">
+            <summary>
+              Column Type
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseColumn.SqlDbType">
+            <summary>
+              Get the SqlDbType for this colum
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseColumn.IsIdentity">
+            <summary>
+              <para>Is identity column</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseColumn.Length">
+            <summary>
+              Column Length
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseColumn.Precision">
+            <summary>
+              Column Precision
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseColumn.Scale">
+            <summary>
+              Column Scale
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseColumn.AllowNull">
+            <summary>
+              Column Allow Null
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseColumn.Default">
+            <summary>
+              Default for this column
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Management.DatabaseColumn.DefaultConstraint">
+            <summary>
+              Database Column Default
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseColumn.DefaultConstraint.#ctor(System.String,System.String)">
+            <summary>
+              Create an existing column default object
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseColumn.DefaultConstraint.GetName(Antix.Data.Management.DatabaseColumn)">
+            <summary>
+              Name of the column
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseColumn.DefaultConstraint.IsNew">
+            <summary>
+              Object is new
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseColumn.DefaultConstraint.IsEdited">
+            <summary>
+              Object has changed
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseColumn.DefaultConstraint.NameOriginal">
+            <summary>
+              Original name
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseColumn.DefaultConstraint.Value">
+            <summary>
+              Value value
+            </summary>
+        </member>
+        <member name="T:LinqKit.Extensions">
+            <summary>Refer to http://www.albahari.com/nutshell/linqkit.html and
+            http://tomasp.net/blog/linq-expand.aspx for more information.</summary>
+        </member>
+        <member name="T:Antix.Data.Entity.PermissionDeniedException">
+            <summary>
+              <para>Permission Denied</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.PermissionDeniedException.#ctor">
+            <summary>Create Object</summary>
+        </member>
+        <member name="M:Antix.Data.Entity.PermissionDeniedException.#ctor(System.String)">
+            <summary>Create Object</summary>
+        </member>
+        <member name="M:Antix.Data.Entity.PermissionDeniedException.#ctor(System.String,System.Exception)">
+            <summary>Create Object</summary>
+        </member>
+        <member name="T:Antix.Data.Entity.Interface.Site.IPagePathSegmentData">
+            <summary>
+              <para>Interface for a page path segment</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Site.IPagePathSegmentData.Primary">
+            <summary>
+              <para>Primary Path</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Site.IPagePathSegmentData.Name">
+            <summary>
+              <para>Path Segment name</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Site.IPagePathSegmentData.TargetPageId">
+            <summary>
+              <para>Page this segment points to</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Site.IPagePathSegmentData.ParentPageId">
+            <summary>
+              <para>Parent page</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.IGroupSecurityUserData.UserGroups">
+            <summary>
+              <para>Users</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Entity.Validation.AuditAttribute">
+            <summary>
+              <para>Updates audit to on validate</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Entity.Interface.Security.IUserPermissionData">
+            <summary>
+              <para>User Permission</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.IUserPermissionData.UserId">
+            <summary>
+              <para>User Id</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.IUserPermissionData.User">
+            <summary>
+              <para>User object</para>
+              <para>Implementing class code </para>
+            </summary>
+            <example>
+              [ForeignKey("UserId")]
+              public User User { get; set; }
+            
+              private int _UserId;
+              public virtual int UserId {
+              get { return User == null ? _UserId : User.Id; }
+              set { _UserId = value; }
+              }
+            
+              IUserData IUserPermissionData.User {
+              get { return User; }
+              set { User = (User)value; }
+              }
+            </example>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.IUserPermissionData.PermissionId">
+            <summary>
+              <para>Permission Id</para>
+              <para>Implementing class code </para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.IUserPermissionData.Permission">
+            <summary>
+              <para>Permission object</para>
+            </summary>
+            <example>
+              [ForeignKey("PermissionId")]
+              public Permission Permission { get; set; }
+            
+              private int _permissionId;
+              public virtual int PermissionId {
+              get { return Permission == null ? _permissionId : Permission.Id; }
+              set { _permissionId = value; }
+              }
+            
+              IPermissionData IUserPermissionData.Permission {
+              get { return Permission; }
+              set { Permission = (Permission)value; }
+              }
+            </example>
+        </member>
+        <member name="T:Antix.Data.Entity.DataNotFoundException">
+            <summary>
+            <para>Data Not Found</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Entity.DataNotFoundException.#ctor(System.Nullable{System.Int32})">
+            <summary>
+            <para>Data Not Found</para>
+            </summary>
+            <param name="id">Id not found</param>
+        </member>
+        <member name="T:Antix.Data.Entity.Interface.Security.Extensions">
+            <summary>
+              <para>Extension methods for Security Interfaces</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Entity.DataIndexAttribute">
+            <summary>
+              <para>Index Attribute</para>
+            </summary>
+        </member>
+        <member name="T:LinqKit.PredicateBuilder">
+            <summary>
+            See http://www.albahari.com/expressions for information and examples.
+            </summary>
+        </member>
+        <member name="T:LinqKit.ExpressionExpander">
+            <summary>
+            Custom expresssion visitor for ExpandableQuery. This expands calls to Expression.Compile() and
+            collapses captured lambda references in subqueries which LINQ to SQL can't otherwise handle.
+            </summary>
+        </member>
+        <member name="M:LinqKit.ExpressionExpander.VisitInvocation(System.Linq.Expressions.InvocationExpression)">
+            <summary>
+            Flatten calls to Invoke so that Entity Framework can understand it. Calls to Invoke are generated
+            by PredicateBuilder.
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Entity.Interface.Security.IPermissionData">
+            <summary>
+              <para>Interface for permission to</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.Interface.Security.IPermissionData.Name">
+            <summary>
+              <para>Name</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Management.Database">
+            <summary>
+              Database
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.Database.#ctor(System.String,Antix.Data.Management.DatabaseServer)">
+            <summary>
+              Create a new database
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.Database.#ctor(System.String,System.Nullable{System.DateTime},Antix.Data.Management.DatabaseServer)">
+            <summary>
+              Create an existing database object
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.Database.GetConnectionString">
+            <summary>
+              Get a connection string for this database
+            </summary>
+            <returns>Connection String</returns>
+        </member>
+        <member name="M:Antix.Data.Management.Database.Script(System.Text.StringBuilder)">
+            <summary>
+              Generate script for this database
+            </summary>
+            <param name = "sql">Sql</param>
+        </member>
+        <member name="M:Antix.Data.Management.Database.Script(System.Text.StringBuilder,System.Boolean)">
+            <summary>
+              Generate script for this database
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.Database.Save">
+            <summary>
+              Save changed to the database structure
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.Database.Create">
+            <summary>
+              <para>Create the database</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.Database.Delete">
+            <summary>
+              <para>Delete the database</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.Database.GetDefault(System.String,System.Object,System.Boolean)">
+            <summary>
+              <para>Get an appropriate default value given the to type name</para>
+            <para>* allows for inserting a new column where AllowNull is false</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.Database.CreatedOn">
+            <summary>
+              Date and time of the creation if this database if it exists
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.Database.Key">
+            <summary>
+              Key for this object
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.Database.Tables">
+            <summary>
+              Tables in this database
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.Database.Schemas">
+            <summary>
+              Schemas in this database
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.Database.References">
+            <summary>
+              References
+            </summary>
+        </member>
+        <member name="T:Antix.Data.DeleteActionEnum">
+            <summary>
+              <para>Allowable actions on delete of a linked object</para>
+            </summary>
+        </member>
+        <member name="F:Antix.Data.DeleteActionEnum.NotSet">
+            <summary>
+              Not Set (this is not a valid action, only in place where the action has not been set in the database)
+            </summary>
+        </member>
+        <member name="F:Antix.Data.DeleteActionEnum.None">
+            <summary>
+              No action, disallow referenced table row deletion
+            </summary>
+        </member>
+        <member name="F:Antix.Data.DeleteActionEnum.Cascade">
+            <summary>
+              Cascade, delete this when referenced is deleted. Use for parent properties in a child collection
+            </summary>
+        </member>
+        <member name="F:Antix.Data.DeleteActionEnum.ToNull">
+            <summary>
+              Set this to null
+            </summary>
+        </member>
+        <member name="F:Antix.Data.DeleteActionEnum.ToDefault">
+            <summary>
+              Set this to default type
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Management.DatabaseUserCollection">
+            <summary>
+              Database User Collection
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseUserCollection.#ctor(Antix.Data.Management.Database)">
+            <summary>
+              Create collection
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseUserCollection.Add(System.String)">
+            <summary>
+              Add a new User
+            </summary>
+            <returns>New User</returns>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseUserCollection.Add(Antix.Data.Management.DatabaseUser)">
+            <summary>
+              Add Existing item to collection
+            </summary>
+            <param name = "item"></param>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseUserCollection.Refresh">
+            <summary>
+              Get all columns in a table
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseUserCollection.Item(System.String)">
+            <summary>
+              Get item by name, if not found a new one is passed back
+            </summary>
+            <param name = "name">Name</param>
+            <returns>Database</returns>
+        </member>
+        <member name="T:Antix.Data.Entity.Validation.PageAttribute">
+            <summary>
+              <para>Page Attribute</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Entity.Validation.OwnedAttribute">
+            <summary>
+              <para>Validation for owned objects</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Data.Management.DatabaseTableCollection">
+            <summary>
+              Database Table Collection
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseTableCollection.#ctor(Antix.Data.Management.Database)">
+            <summary>
+              Create collection
+            </summary>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseTableCollection.Contains(System.String,System.String)">
+            <summary>
+              Collection contains table
+            </summary>
+            <param name = "schemaName">Schema</param>
+            <param name = "name">Name</param>
+            <returns>True if found</returns>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseTableCollection.Add(System.String)">
+            <summary>
+              Add new table on default (dbo) schema
+            </summary>
+            <param name = "name">Table name</param>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseTableCollection.Add(System.String,System.String)">
+            <summary>
+              Add a new table
+            </summary>
+            <param name = "schemaName">Schema</param>
+            <param name = "name">Name</param>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseTableCollection.Add(Antix.Data.Management.DatabaseTable)">
+            <summary>
+              Add Existing item to collection
+            </summary>
+            <param name = "item"></param>
+        </member>
+        <member name="M:Antix.Data.Management.DatabaseTableCollection.Refresh">
+            <summary>
+              Get all tables on server
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseTableCollection.Item(System.String,System.String)">
+            <summary>
+              Get by key
+            </summary>
+            <param name = "schemaName">schema</param>
+            <param name = "name">name</param>
+            <returns></returns>
+        </member>
+        <member name="P:Antix.Data.Management.DatabaseTableCollection.Item(System.String,System.String,System.Boolean)">
+            <summary>
+              Get by key
+            </summary>
+            <param name = "schemaName">schema</param>
+            <param name = "name">name</param>
+            <param name = "create">create</param>
+            <returns></returns>
+        </member>
+        <member name="P:Antix.Data.Entity.DataColumnAttribute.RenameFrom">
+            <summary>
+              <para>Default value</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.DataColumnAttribute.Default">
+            <summary>
+              <para>Default value</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.DataColumnAttribute.Precision">
+            <summary>
+            <para>Decimal Precision</para>
+            </summary>
+        </member>
+        <member name="P:Antix.Data.Entity.DataColumnAttribute.Scale">
+            <summary>
+            <para>Decimal Scale</para>
+            </summary>
+        </member>
+        <member name="T:Antix.Data.DataServiceNotFoundException">
+            <summary>
+              <para>DataServiceNotFoundException</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.DataServiceNotFoundException.#ctor(System.Type)">
+            <summary>
+              <para>Create</para>
+            </summary>
+        </member>
+        <member name="M:Antix.Data.DataServiceNotFoundException.#ctor(System.Type,System.Exception)">
+            <summary>
+              <para>Create</para>
+            </summary>
+        </member>
+    </members>
+</doc>

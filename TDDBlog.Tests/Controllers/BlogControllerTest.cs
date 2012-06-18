@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Web.Mvc;
+﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using TDDBlog.Data;
 using TDDBlog.Models;
 using TDDBlog.Tests.Data;
 using TDDBlog.Controllers;
@@ -42,7 +43,8 @@ namespace TDDBlog.Tests.Controllers
                 .Build();
 
             var blogRepository = new Mock<IBlogRepository>();
-            blogRepository.Setup(x => x.GetAllBlogEntries())
+            blogRepository
+                .Setup(p => p.GetAllBlogEntries())
                 .Returns(new List<BlogEntry>
                              {
                                  mockBlogEntry1,
@@ -60,6 +62,7 @@ namespace TDDBlog.Tests.Controllers
             Assert.AreEqual(id1, blogEntry1.Id);
             Assert.AreEqual(title1, blogEntry1.Title);
             Assert.AreEqual(content1, blogEntry1.Content);
+
             const string url1 = "my-first-blog-entry";
             Assert.AreEqual(url1, blogEntry1.Url);
 
@@ -67,8 +70,10 @@ namespace TDDBlog.Tests.Controllers
             Assert.AreEqual(id2, blogEntry2.Id);
             Assert.AreEqual(title2, blogEntry2.Title);
             Assert.AreEqual(content2, blogEntry2.Content);
+
             const string url2 = "Im-still-in-to-this";
             Assert.AreNotEqual(url2, blogEntry2.Url);
+
             const string url2A = "im-still-in-to-this";
             Assert.AreEqual(url2A, blogEntry2.Url);
 
@@ -79,6 +84,23 @@ namespace TDDBlog.Tests.Controllers
             const string url3 = "ok";
             Assert.AreEqual(url3, blogEntry3.Url);
             Assert.AreNotEqual(title3, blogEntry3.Url);
+        }
+
+        [TestMethod]
+        public void TestingDataContext()
+        {
+            using(var dataContext = new DataContext())
+            {
+                var blogEntry = new BlogEntryData
+                                    {
+                                        Title = "My first blog Entry",
+                                        Content = "I love blogging, it is so cool",
+                                        DateCreated = DateTime.Now
+                                    };
+
+                dataContext.BlogEntries.Add(blogEntry);
+                dataContext.SaveChanges();
+            }
         }
     }
 }
