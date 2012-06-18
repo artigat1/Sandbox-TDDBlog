@@ -86,21 +86,21 @@ namespace TDDBlog.Tests.Controllers
             Assert.AreNotEqual(title3, blogEntry3.Url);
         }
 
-        [TestMethod]
-        public void TestingDataContext()
-        {
-            using(var dataContext = new DataContext())
-            {
-                var blogEntry = new BlogEntryData
-                                    {
-                                        Title = "My first blog Entry",
-                                        Content = "I love blogging, it is so cool",
-                                        DateCreated = DateTime.Now
-                                    };
+        //[TestMethod]
+        //public void TestingDataContext()
+        //{
+        //    using(var dataContext = new DataContext())
+        //    {
+        //        var blogEntry = new BlogEntryData
+        //                            {
+        //                                Title = "My first blog Entry",
+        //                                Content = "I love blogging, it is so cool",
+        //                                DateCreated = DateTime.Now
+        //                            };
 
-                dataContext.BlogEntries.Add(blogEntry);
-                dataContext.SaveChanges();
-            }
-        }
+        //        dataContext.BlogEntries.Add(blogEntry);
+        //        dataContext.SaveChanges();
+        //    }
+        //}
     }
 }
