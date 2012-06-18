@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Web.Mvc;
 using TDDBlog.Models;
 
 namespace TDDBlog.Controllers
@@ -23,8 +24,7 @@ namespace TDDBlog.Controllers
         public ViewResult Index()
         {
             var blogEntries = _blogRepository.GetAllBlogEntries();
-
-            foreach (BlogEntry blogEntry in blogEntries)
+            foreach (var blogEntry in blogEntries)
             {
                 blogEntry.Url = blogEntry.Title.
                     Replace("'", string.Empty).
@@ -32,7 +32,6 @@ namespace TDDBlog.Controllers
                     Replace(" ", "-").
                     ToLower();
             }
-
             return View(blogEntries);
         }
     }
